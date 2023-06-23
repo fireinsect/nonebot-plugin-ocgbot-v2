@@ -1,0 +1,14 @@
+[project]
+name = "nonebot-plugin-ocgbot-v2"
+version = "0.1.0"
+description = "nonebot-plugin-ocgbot-v2"
+readme = "README.md"
+requires-python = ">=3.8, <4.0"
+
+[tool.nonebot]
+adapters = [
+    { name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11" }
+]
+plugins = []
+plugin_dirs = ["nonebot_plugin_ocgbot_v2/plugins"]
+builtin_plugins = ["echo"]

@@ -1,0 +1,2374 @@
+{
+  "RECORDS": [
+    {
+      "name": "幻影骑士团 无声靴",
+      "nick_name": "无语靴",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影骑士团 破洞鳞甲",
+      "nick_name": "破防甲",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影骑士团 沾尘袍",
+      "nick_name": "沾点袍",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影骑士团 裂头盔",
+      "nick_name": "蚌埠盔",
+      "NK_type": 0
+    },
+    {
+      "name": "水晶机巧-继承玻纤",
+      "nick_name": "水机",
+      "NK_type": 0
+    },
+    {
+      "name": "捕食植物 青锁龙森蚺",
+      "nick_name": "蚺蚺",
+      "NK_type": 0
+    },
+    {
+      "name": "效果遮蒙者",
+      "nick_name": "丝袜",
+      "NK_type": 0
+    },
+    {
+      "name": "效果遮蒙者",
+      "nick_name": "效遮",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙-球体形",
+      "nick_name": "球形体",
+      "NK_type": 0
+    },
+    {
+      "name": "神影依·拿非利",
+      "nick_name": "拿妈",
+      "NK_type": 0
+    },
+    {
+      "name": "神影依·米德拉什",
+      "nick_name": "小米",
+      "NK_type": 0
+    },
+    {
+      "name": "神影依·米德拉什",
+      "nick_name": "米得拉什",
+      "NK_type": 0
+    },
+    {
+      "name": "海龟坏兽 加美西耶勒",
+      "nick_name": "海龟",
+      "NK_type": 0
+    },
+    {
+      "name": "海龟坏兽 加美西耶勒",
+      "nick_name": "龟龟",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·洗衣龙女",
+      "nick_name": "小蓝",
+      "NK_type": 0
+    },
+    {
+      "name": "未来No.0 未来龙皇 霍普",
+      "nick_name": "龙皇",
+      "NK_type": 0
+    },
+    {
+      "name": "闪光No.0 希望之异热同心",
+      "nick_name": "教主",
+      "NK_type": 0
+    },
+    {
+      "name": "真龙皇 法·王·兽",
+      "nick_name": "VFD",
+      "NK_type": 0
+    },
+    {
+      "name": "真龙皇 法·王·兽",
+      "nick_name": "法法",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 双晓王 末法神",
+      "nick_name": "椅子王",
+      "NK_type": 0
+    },
+    {
+      "name": "五神龙",
+      "nick_name": "五帝龙",
+      "NK_type": 0
+    },
+    {
+      "name": "连神龙",
+      "nick_name": "链神龙",
+      "NK_type": 0
+    },
+    {
+      "name": "奥西里斯之天空龙",
+      "nick_name": "内奸龙",
+      "NK_type": 0
+    },
+    {
+      "name": "奥西里斯之天空龙",
+      "nick_name": "奥西里斯的天空龙",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙",
+      "nick_name": "太阳神的翼神龙",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙",
+      "nick_name": "拉的翼神龙",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙",
+      "nick_name": "拉之翼神龙",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙",
+      "nick_name": "诈尸鸟",
+      "NK_type": 0
+    },
+    {
+      "name": "欧贝利斯克之巨神兵",
+      "nick_name": "欧贝利斯克的巨神兵",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "畜生",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "最美新生",
+      "NK_type": 0
+    },
+    {
+      "name": "黄金卿 黄金国巫妖",
+      "nick_name": "小金人",
+      "NK_type": 0
+    },
+    {
+      "name": "创圣魔导王 恩底弥翁",
+      "nick_name": "上海王",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤师 阿莱斯特",
+      "nick_name": "阿莱",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤兽 梅尔卡巴",
+      "nick_name": "光车",
+      "NK_type": 0
+    },
+    {
+      "name": "熔岩魔神",
+      "nick_name": "大宝贝",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管狞猛龙",
+      "nick_name": "柠檬",
+      "NK_type": 0
+    },
+    {
+      "name": "雷电龙-雷龙",
+      "nick_name": "暗雷龙",
+      "NK_type": 0
+    },
+    {
+      "name": "琰魔龙王 红莲魔·厄",
+      "nick_name": "红莲魔龙厄",
+      "NK_type": 0
+    },
+    {
+      "name": "冲浪检察官",
+      "nick_name": "滑板",
+      "NK_type": 0
+    },
+    {
+      "name": "强欲而贪欲之壶",
+      "nick_name": "吸毒壶",
+      "NK_type": 0
+    },
+    {
+      "name": "抹杀之指名者",
+      "nick_name": "剑指",
+      "NK_type": 0
+    },
+    {
+      "name": "次元吸引者",
+      "nick_name": "大宇宙人",
+      "NK_type": 0
+    },
+    {
+      "name": "颉颃胜负",
+      "nick_name": "文盲胜负",
+      "NK_type": 0
+    },
+    {
+      "name": "宵星之机神 丁吉尔苏",
+      "nick_name": "黑哥哥",
+      "NK_type": 0
+    },
+    {
+      "name": "被封印的艾克佐迪亚",
+      "nick_name": "老艾",
+      "NK_type": 0
+    },
+    {
+      "name": "被封印的艾克佐迪亚",
+      "nick_name": "黑暗大法师",
+      "NK_type": 0
+    },
+    {
+      "name": "原始生命态 尼比鲁",
+      "nick_name": "陨石",
+      "NK_type": 0
+    },
+    {
+      "name": "天霆号 阿宙斯",
+      "nick_name": "高达",
+      "NK_type": 0
+    },
+    {
+      "name": "超魔导龙骑士-真红眼龙骑士",
+      "nick_name": "红爹",
+      "NK_type": 0
+    },
+    {
+      "name": "超魔导龙骑士-真红眼龙骑士",
+      "nick_name": "红蛆",
+      "NK_type": 0
+    },
+    {
+      "name": "超魔导龙骑士-真红眼龙骑士",
+      "nick_name": "真红眼龙骑兵",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-究极猎鹰",
+      "nick_name": "脆皮鸡",
+      "NK_type": 0
+    },
+    {
+      "name": "融合命运",
+      "nick_name": "命融",
+      "NK_type": 0
+    },
+    {
+      "name": "等级偷窃虫",
+      "nick_name": "偷星虫",
+      "NK_type": 0
+    },
+    {
+      "name": "No.95 银河眼暗物质龙",
+      "nick_name": "暗征龙",
+      "NK_type": 0
+    },
+    {
+      "name": "解码语者·炽热之魂",
+      "nick_name": "火码",
+      "NK_type": 0
+    },
+    {
+      "name": "神圣防护罩 -反射镜力-",
+      "nick_name": "汉诺伊的崇高力量",
+      "NK_type": 0
+    },
+    {
+      "name": "神圣防护罩 -反射镜力-",
+      "nick_name": "汉诺骑士的崇高力量",
+      "NK_type": 0
+    },
+    {
+      "name": "神圣防护罩 -反射镜力-",
+      "nick_name": "汉诺的崇高力量",
+      "NK_type": 0
+    },
+    {
+      "name": "秘旋谍-天才",
+      "nick_name": "博士",
+      "NK_type": 0
+    },
+    {
+      "name": "虹光新宇侠",
+      "nick_name": "虹爹",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 新宇侠",
+      "nick_name": "奥特曼",
+      "NK_type": 0
+    },
+    {
+      "name": "防火龙",
+      "nick_name": "大姐",
+      "NK_type": 0
+    },
+    {
+      "name": "防火龙",
+      "nick_name": "防火墙龙",
+      "NK_type": 0
+    },
+    {
+      "name": "防火龙·暗流体-新电磁泄密风",
+      "nick_name": "彩流体",
+      "NK_type": 0
+    },
+    {
+      "name": "青眼混沌极龙",
+      "nick_name": "杂鱼粉碎机",
+      "NK_type": 0
+    },
+    {
+      "name": "艾乐隆",
+      "nick_name": "伞兵",
+      "NK_type": 0
+    },
+    {
+      "name": "艾乐隆",
+      "nick_name": "闪兵艾乐隆",
+      "NK_type": 0
+    },
+    {
+      "name": "升阶魔法-七皇之剑",
+      "nick_name": "卡手剑",
+      "NK_type": 0
+    },
+    {
+      "name": "巨斧袭击者",
+      "nick_name": "斧王",
+      "NK_type": 0
+    },
+    {
+      "name": "红莲蔷薇龙",
+      "nick_name": "花爹",
+      "NK_type": 0
+    },
+    {
+      "name": "黑蔷薇龙",
+      "nick_name": "花龙",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影骑士团",
+      "nick_name": "汗影骑士团",
+      "NK_type": 1
+    },
+    {
+      "name": "影依",
+      "nick_name": "影衣",
+      "NK_type": 1
+    },
+    {
+      "name": "源数",
+      "nick_name": "源批",
+      "NK_type": 1
+    },
+    {
+      "name": "栗子球",
+      "nick_name": "库里波",
+      "NK_type": 1
+    },
+    {
+      "name": "未界域",
+      "nick_name": "危险",
+      "NK_type": 1
+    },
+    {
+      "name": "暗黑界",
+      "nick_name": "卡手界",
+      "NK_type": 1
+    },
+    {
+      "name": "永火",
+      "nick_name": "无限狱",
+      "NK_type": 1
+    },
+    {
+      "name": "救祓",
+      "nick_name": "救拔",
+      "NK_type": 1
+    },
+    {
+      "name": "救祓",
+      "nick_name": "文盲少女",
+      "NK_type": 1
+    },
+    {
+      "name": "真红眼",
+      "nick_name": "咸鱼眼",
+      "NK_type": 1
+    },
+    {
+      "name": "闪刀姬",
+      "nick_name": "刀女人",
+      "NK_type": 1
+    },
+    {
+      "name": "秘旋谍",
+      "nick_name": "SPY",
+      "NK_type": 1
+    },
+    {
+      "name": "幻变骚灵",
+      "nick_name": "烧0",
+      "NK_type": 1
+    },
+    {
+      "name": "幻变骚灵",
+      "nick_name": "骚0",
+      "NK_type": 1
+    },
+    {
+      "name": "虫惑魔",
+      "nick_name": "虫妹",
+      "NK_type": 1
+    },
+    {
+      "name": "军贯",
+      "nick_name": "寿司",
+      "NK_type": 1
+    },
+    {
+      "name": "混沌NO",
+      "nick_name": "CNO",
+      "NK_type": 1
+    },
+    {
+      "name": "英雄",
+      "nick_name": "HERO",
+      "NK_type": 1
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "不可以涩涩",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "不可以色色",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "可以色色",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "可以涩涩",
+      "NK_type": 0
+    },
+    {
+      "name": "查卡姬",
+      "nick_name": "群可爱",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "查卡猪",
+      "NK_type": 0
+    },
+    {
+      "name": "崇光之宣告者",
+      "nick_name": "康师傅",
+      "NK_type": 0
+    },
+    {
+      "name": "闭锁世界的冥神",
+      "nick_name": "老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤师 阿莱斯特",
+      "nick_name": "渣男",
+      "NK_type": 0
+    },
+    {
+      "name": "欧贝利斯克之巨神兵",
+      "nick_name": "脚心黑",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "畜牲",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "初生",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙-球体形",
+      "nick_name": "龙蛋",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙-球体形",
+      "nick_name": "鸟蛋",
+      "NK_type": 0
+    },
+    {
+      "name": "No.59 背反之料理人",
+      "nick_name": "摆烂人",
+      "NK_type": 0
+    },
+    {
+      "name": "五阵魔术师",
+      "nick_name": "五重魔术师",
+      "NK_type": 0
+    },
+    {
+      "name": "水晶翼同调龙",
+      "nick_name": "水晶翼",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影骑士团 锈蚀月刃斧",
+      "nick_name": "秀逗斧",
+      "NK_type": 0
+    },
+    {
+      "name": "教导的圣女 艾克莉西娅",
+      "nick_name": "饭桶",
+      "NK_type": 0
+    },
+    {
+      "name": "相剑大邪-七星龙渊",
+      "nick_name": "罕见",
+      "NK_type": 0
+    },
+    {
+      "name": "相剑大邪-七星龙渊",
+      "nick_name": "狗罕剑",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 火焰翼侠",
+      "nick_name": "劳模侠",
+      "NK_type": 0
+    },
+    {
+      "name": "鲜花女男爵",
+      "nick_name": "谷爱凌",
+      "NK_type": 0
+    },
+    {
+      "name": "救祓",
+      "nick_name": "JB少女",
+      "NK_type": 1
+    },
+    {
+      "name": "假面英雄 暗爪",
+      "nick_name": "朋友侠",
+      "NK_type": 0
+    },
+    {
+      "name": "超魔导龙骑士-真红眼龙骑士",
+      "nick_name": "龙魔导",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 固态侠",
+      "nick_name": "钢甲侠",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 天空侠",
+      "nick_name": "空气侠",
+      "NK_type": 0
+    },
+    {
+      "name": "效果遮蒙者",
+      "nick_name": "效分",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管狞猛龙",
+      "nick_name": "白枪管",
+      "NK_type": 0
+    },
+    {
+      "name": "增殖的G",
+      "nick_name": "群C",
+      "NK_type": 0
+    },
+    {
+      "name": "欧尼斯特",
+      "nick_name": "诚哥",
+      "NK_type": 0
+    },
+    {
+      "name": "灰流丽",
+      "nick_name": "乌拉拉",
+      "NK_type": 0
+    },
+    {
+      "name": "红莲魔龙",
+      "nick_name": "塔玛希",
+      "NK_type": 0
+    },
+    {
+      "name": "儚无水木",
+      "nick_name": "舔狗",
+      "NK_type": 0
+    },
+    {
+      "name": "黄金卿 黄金国巫妖",
+      "nick_name": "呜喵王",
+      "NK_type": 0
+    },
+    {
+      "name": "随风旅鸟×帝企",
+      "nick_name": "帝骑哥",
+      "NK_type": 0
+    },
+    {
+      "name": "娱乐伙伴 灵摆魔术家",
+      "nick_name": "魔术爹",
+      "NK_type": 0
+    },
+    {
+      "name": "时空之灵摆读阵",
+      "nick_name": "红阵",
+      "NK_type": 0
+    },
+    {
+      "name": "星霜之灵摆读阵",
+      "nick_name": "绿阵",
+      "NK_type": 0
+    },
+    {
+      "name": "先史遗产 内布拉星象盘",
+      "nick_name": "绿豆饼",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-究极猎鹰",
+      "nick_name": "黄金脆皮鸡",
+      "NK_type": 0
+    },
+    {
+      "name": "灵摆呼唤",
+      "nick_name": "PCALL",
+      "NK_type": 0
+    },
+    {
+      "name": "铁兽战线 弗拉克杜尔",
+      "nick_name": "人马",
+      "NK_type": 0
+    },
+    {
+      "name": "强欲而谦虚之壶",
+      "nick_name": "QQ壶",
+      "NK_type": 0
+    },
+    {
+      "name": "邪神 神之化身",
+      "nick_name": "皮蛋",
+      "NK_type": 0
+    },
+    {
+      "name": "电脑堺",
+      "nick_name": "电脑界",
+      "NK_type": 1
+    },
+    {
+      "name": "电脑堺",
+      "nick_name": "卡手堺",
+      "NK_type": 1
+    },
+    {
+      "name": "教导的圣女 艾克莉西娅",
+      "nick_name": "吃货",
+      "NK_type": 0
+    },
+    {
+      "name": "冥王结界波",
+      "nick_name": "姐姐波",
+      "NK_type": 0
+    },
+    {
+      "name": "阿不思的落胤",
+      "nick_name": "吃瘪王",
+      "NK_type": 0
+    },
+    {
+      "name": "捕食植物 犀角龙",
+      "nick_name": "洗脚龙",
+      "NK_type": 0
+    },
+    {
+      "name": "赫灼龙 伪装龙",
+      "nick_name": "烧血龙",
+      "NK_type": 0
+    },
+    {
+      "name": "恐龙摔跤手·潘克拉辛角龙",
+      "nick_name": "问心无愧",
+      "NK_type": 0
+    },
+    {
+      "name": "方程式同调士",
+      "nick_name": "小车",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 深渊王 比尔伽美斯",
+      "nick_name": "闪闪",
+      "NK_type": 0
+    },
+    {
+      "name": "抒情歌鸲",
+      "nick_name": "LL",
+      "NK_type": 1
+    },
+    {
+      "name": "万物创世龙",
+      "nick_name": "万碎龙",
+      "NK_type": 0
+    },
+    {
+      "name": "深渊的潜伏者",
+      "nick_name": "下水道",
+      "NK_type": 0
+    },
+    {
+      "name": "喷气同调士",
+      "nick_name": "小喷",
+      "NK_type": 0
+    },
+    {
+      "name": "被封印的艾克佐迪亚",
+      "nick_name": "老艾",
+      "NK_type": 0
+    },
+    {
+      "name": "梦幻崩界 伊娃力丝",
+      "nick_name": "黑妹妹",
+      "NK_type": 0
+    },
+    {
+      "name": "PSY骨架驱动者",
+      "nick_name": "死人",
+      "NK_type": 0
+    },
+    {
+      "name": "PSY骨架装备·γ",
+      "nick_name": "P头",
+      "NK_type": 0
+    },
+    {
+      "name": "死灵之颜",
+      "nick_name": "死人脸",
+      "NK_type": 0
+    },
+    {
+      "name": "无限起动要塞 百万吨百臂狂风",
+      "nick_name": "挖掘机",
+      "NK_type": 0
+    },
+    {
+      "name": "机甲部队·毁灭武装力量",
+      "nick_name": "泥头车",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤兽 普尔加托里奥",
+      "nick_name": "火召",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 怒涛大王 决策凯撒",
+      "nick_name": "大怒涛",
+      "NK_type": 0
+    },
+    {
+      "name": "红色重启",
+      "nick_name": "拉闸",
+      "NK_type": 0
+    },
+    {
+      "name": "黄金卿 黄金国巫妖",
+      "nick_name": "罗志祥",
+      "NK_type": 0
+    },
+    {
+      "name": "黄金卿 黄金国巫妖",
+      "nick_name": "黄金卿 埃尔德里奇",
+      "NK_type": 0
+    },
+    {
+      "name": "时间潜行者·表盘修复师",
+      "nick_name": "小偷",
+      "NK_type": 0
+    },
+    {
+      "name": "时间潜行者·表盘修复师",
+      "nick_name": "时间怪盗 盘面重塑者",
+      "NK_type": 0
+    },
+    {
+      "name": "黄金卿 黄金国巫妖",
+      "nick_name": "时间管理大师",
+      "NK_type": 0
+    },
+    {
+      "name": "时间潜行者",
+      "nick_name": "时潜怪盗",
+      "NK_type": 1
+    },
+    {
+      "name": "闪刀姬-露世",
+      "nick_name": "闪刀姬 萝杰",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-露世",
+      "nick_name": "闪刀姬 逆零",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-露世",
+      "nick_name": "逆零",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-露世",
+      "nick_name": "闪刀姬逆零",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-雫空",
+      "nick_name": "水刀",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-燎里",
+      "nick_name": "火刀",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-燎里",
+      "nick_name": "闪刀姬篝",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-燎里",
+      "nick_name": "篝",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-燎里",
+      "nick_name": "闪刀姬 篝",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-飒天",
+      "nick_name": "风刀",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-魁奈",
+      "nick_name": "地刀",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-魁奈",
+      "nick_name": "闪刀姬 腕",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-魁奈",
+      "nick_name": "闪刀姬腕",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀术式-烈火再燃",
+      "nick_name": "火术",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀术式-妨害波纹",
+      "nick_name": "水术",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机-虎鲨加农炮",
+      "nick_name": "虎鲨炮",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机-虎鲨加农炮",
+      "nick_name": "闪刀机 鲨鱼加农炮",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机-虎鲨加农炮",
+      "nick_name": "鲨鱼加农炮",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机关-多任务战刀机",
+      "nick_name": "跳楼机",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机关-多任务战刀机",
+      "nick_name": "闪刀机关 多用途战机",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀机关-多任务战刀机",
+      "nick_name": "多用途战机",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀术式-爆风偏向",
+      "nick_name": "风术",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀术式-剪斗交刃",
+      "nick_name": "地术",
+      "NK_type": 0
+    },
+    {
+      "name": "技能抽取",
+      "nick_name": "技抽",
+      "NK_type": 0
+    },
+    {
+      "name": "虚无空间",
+      "nick_name": "虚无",
+      "NK_type": 0
+    },
+    {
+      "name": "魔救之奇迹",
+      "nick_name": "魔救的奇迹",
+      "NK_type": 1
+    },
+    {
+      "name": "魔救之奇迹",
+      "nick_name": "矿工",
+      "NK_type": 1
+    },
+    {
+      "name": "科技属 超图书馆员",
+      "nick_name": "馆长",
+      "NK_type": 0
+    },
+    {
+      "name": "月女神之镞",
+      "nick_name": "月女神",
+      "NK_type": 0
+    },
+    {
+      "name": "渊眼白龙",
+      "nick_name": "白嫁",
+      "NK_type": 0
+    },
+    {
+      "name": "被封印的艾克佐迪亚",
+      "nick_name": "老I",
+      "NK_type": 0
+    },
+    {
+      "name": "墓穴的指名者",
+      "nick_name": "冲马桶",
+      "NK_type": 0
+    },
+    {
+      "name": "齐唱僵尸",
+      "nick_name": "肖梓池",
+      "NK_type": 0
+    },
+    {
+      "name": "海龟坏兽 加美西耶勒",
+      "nick_name": "曾被称为剑皇的龟",
+      "NK_type": 0
+    },
+    {
+      "name": "相剑",
+      "nick_name": "中国剑",
+      "NK_type": 1
+    },
+    {
+      "name": "衍生物",
+      "nick_name": "TOKEN",
+      "NK_type": 1
+    },
+    {
+      "name": "相剑衍生物",
+      "nick_name": "吴京衍生物",
+      "NK_type": 0
+    },
+    {
+      "name": "鲜花女男爵",
+      "nick_name": "中国人",
+      "NK_type": 0
+    },
+    {
+      "name": "墓穴的指名者",
+      "nick_name": "冲厕所",
+      "NK_type": 0
+    },
+    {
+      "name": "恶魔科学怪人",
+      "nick_name": "弗兰肯",
+      "NK_type": 0
+    },
+    {
+      "name": "编号系猎人",
+      "nick_name": "斗子哥",
+      "NK_type": 0
+    },
+    {
+      "name": "欧贝利斯克之巨神兵",
+      "nick_name": "卡密哒",
+      "NK_type": 0
+    },
+    {
+      "name": "调皮宝贝",
+      "nick_name": "赖皮崽种",
+      "NK_type": 1
+    },
+    {
+      "name": "童话动物",
+      "nick_name": "小动物",
+      "NK_type": 1
+    },
+    {
+      "name": "娱乐伙伴 灵摆魔术家",
+      "nick_name": "灵摆爹",
+      "NK_type": 0
+    },
+    {
+      "name": "三战之才",
+      "nick_name": "强欲而心变之番兵",
+      "NK_type": 0
+    },
+    {
+      "name": "三战之才",
+      "nick_name": "强欲而心变的番兵",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "老公",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "自己",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "我自己",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "人工智障",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "智障",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 绝对零度侠",
+      "nick_name": "亡语侠",
+      "NK_type": 0
+    },
+    {
+      "name": "流天救世星龙",
+      "nick_name": "城之内龙",
+      "NK_type": 0
+    },
+    {
+      "name": "魔封的芳香",
+      "nick_name": "魔封",
+      "NK_type": 0
+    },
+    {
+      "name": "王宫的敕命",
+      "nick_name": "敕命",
+      "NK_type": 0
+    },
+    {
+      "name": "技能抽取",
+      "nick_name": "技抽",
+      "NK_type": 0
+    },
+    {
+      "name": "真龙皇 法·王·兽",
+      "nick_name": "非常友好龙",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·客厅龙女",
+      "nick_name": "小绿",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·寝室龙女",
+      "nick_name": "小黑",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·育婴龙女",
+      "nick_name": "小粉",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·蒸馏室龙女",
+      "nick_name": "小红",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·地慈龙女",
+      "nick_name": "大粉",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·天风龙女",
+      "nick_name": "大绿",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·赤焰龙女",
+      "nick_name": "大红",
+      "NK_type": 0
+    },
+    {
+      "name": "海龟坏兽 加美西耶勒",
+      "nick_name": "大蓝",
+      "NK_type": 0
+    },
+    {
+      "name": "神之宣告",
+      "nick_name": "使不得",
+      "NK_type": 0
+    },
+    {
+      "name": "神之宣告",
+      "nick_name": "神宣",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤兽 梅尔卡巴",
+      "nick_name": "最美校花",
+      "NK_type": 0
+    },
+    {
+      "name": "神圣防护罩 -反射镜力-",
+      "nick_name": "汉诺崇高力量",
+      "NK_type": 0
+    },
+    {
+      "name": "神圣防护罩 -反射镜力-",
+      "nick_name": "崇高力量",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤限制器",
+      "nick_name": "限制器",
+      "NK_type": 0
+    },
+    {
+      "name": "笑容",
+      "nick_name": "微笑",
+      "NK_type": 1
+    },
+    {
+      "name": "花札卫",
+      "nick_name": "花牌",
+      "NK_type": 1
+    },
+    {
+      "name": "相剑大邪-七星龙渊",
+      "nick_name": "狗罕见",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "凤雏",
+      "NK_type": 0
+    },
+    {
+      "name": "相剑大邪-七星龙渊",
+      "nick_name": "勾罕见",
+      "NK_type": 0
+    },
+    {
+      "name": "假面英雄 暗爪",
+      "nick_name": "友尽侠",
+      "NK_type": 0
+    },
+    {
+      "name": "简易融合",
+      "nick_name": "杯面",
+      "NK_type": 0
+    },
+    {
+      "name": "简易融合",
+      "nick_name": "泡面",
+      "NK_type": 0
+    },
+    {
+      "name": "王家长眠之谷",
+      "nick_name": "亲妈谷",
+      "NK_type": 0
+    },
+    {
+      "name": "魔钟洞",
+      "nick_name": "友尽洞",
+      "NK_type": 0
+    },
+    {
+      "name": "直播☆双子",
+      "nick_name": "管人",
+      "NK_type": 1
+    },
+    {
+      "name": "被封印者的",
+      "nick_name": "尸块",
+      "NK_type": 1
+    },
+    {
+      "name": "被封印者的右足",
+      "nick_name": "足控",
+      "NK_type": 0
+    },
+    {
+      "name": "被封印者的右足",
+      "nick_name": "肉丝",
+      "NK_type": 0
+    },
+    {
+      "name": "PSY骨架驱动者",
+      "nick_name": "光头",
+      "NK_type": 0
+    },
+    {
+      "name": "7",
+      "nick_name": "七",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "我",
+      "NK_type": 0
+    },
+    {
+      "name": "王家长眠之谷",
+      "nick_name": "亲妈长眠之谷",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "不死之身",
+      "NK_type": 0
+    },
+    {
+      "name": "灰流丽",
+      "nick_name": "灰",
+      "NK_type": 0
+    },
+    {
+      "name": "超魔导龙骑士-真红眼龙骑士",
+      "nick_name": "卧龙",
+      "NK_type": 0
+    },
+    {
+      "name": "天球之圣刻印",
+      "nick_name": "天球",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·洗衣龙女",
+      "nick_name": "最强之神",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-究极猎鹰",
+      "nick_name": "大鸟",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-究极猎鹰",
+      "nick_name": "脆皮鸡",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-革命猎鹰",
+      "nick_name": "对双穹宝具",
+      "NK_type": 0
+    },
+    {
+      "name": "双穹之骑士 阿斯特拉姆",
+      "nick_name": "打架王",
+      "NK_type": 0
+    },
+    {
+      "name": "双穹之骑士 阿斯特拉姆",
+      "nick_name": "打架哥",
+      "NK_type": 0
+    },
+    {
+      "name": "霸王烈龙 异色眼烈火龙",
+      "nick_name": "纯爱战神",
+      "NK_type": 0
+    },
+    {
+      "name": "俱舍怒威族·芬里尔狼",
+      "nick_name": "三狼",
+      "NK_type": 0
+    },
+    {
+      "name": "源数",
+      "nick_name": "源批",
+      "NK_type": 1
+    },
+    {
+      "name": "俱舍怒威族·芬里尔狼",
+      "nick_name": "刹帝利",
+      "NK_type": 0
+    },
+    {
+      "name": "抒情歌鸲-天青石鹡鸰",
+      "nick_name": "唐可可",
+      "NK_type": 0
+    },
+    {
+      "name": "直播☆双子 姬丝基勒·霜精",
+      "nick_name": "嘉然",
+      "NK_type": 0
+    },
+    {
+      "name": "直播☆双子 璃拉·糖果",
+      "nick_name": "向晚",
+      "NK_type": 0
+    },
+    {
+      "name": "熔岩魔神",
+      "nick_name": "爱的假人",
+      "NK_type": 0
+    },
+    {
+      "name": "对极英雄 混沌侠",
+      "nick_name": "獠牙王牌",
+      "NK_type": 0
+    },
+    {
+      "name": "银河战士",
+      "nick_name": "电子龙战士",
+      "NK_type": 0
+    },
+    {
+      "name": "狮子男巫",
+      "nick_name": "真神",
+      "NK_type": 0
+    },
+    {
+      "name": "天霆号 阿宙斯",
+      "nick_name": "超量终点",
+      "NK_type": 0
+    },
+    {
+      "name": "额外灵摆",
+      "nick_name": "EXP",
+      "NK_type": 0
+    },
+    {
+      "name": "科技属 星斗守护者",
+      "nick_name": "小布",
+      "NK_type": 0
+    },
+    {
+      "name": "天霆号 阿宙斯",
+      "nick_name": "超量的终点",
+      "NK_type": 0
+    },
+    {
+      "name": "科技属 戟炮手/爆裂体",
+      "nick_name": "14星大怪",
+      "NK_type": 0
+    },
+    {
+      "name": "螺丝刺猬",
+      "nick_name": "拔螺丝",
+      "NK_type": 0
+    },
+    {
+      "name": "欧贝利斯克之巨神兵",
+      "nick_name": "祭品兵",
+      "NK_type": 0
+    },
+    {
+      "name": "转生炎兽",
+      "nick_name": "冒火小畜生",
+      "NK_type": 1
+    },
+    {
+      "name": "AtoZ-神龙歼灭炮",
+      "nick_name": "真正的康师傅",
+      "NK_type": 0
+    },
+    {
+      "name": "急袭猛禽-武库猎鹰",
+      "nick_name": "打工猎鹰",
+      "NK_type": 0
+    },
+    {
+      "name": "崇光之宣告者",
+      "nick_name": "虚假的康师傅",
+      "NK_type": 0
+    },
+    {
+      "name": "相剑大邪-七星龙渊",
+      "nick_name": "东雪莲",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "代理酱的老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "代理师傅的老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "冰结界之龙 三叉龙",
+      "nick_name": "白三叉",
+      "NK_type": 0
+    },
+    {
+      "name": "过去被称为神的龟",
+      "nick_name": "UZI",
+      "NK_type": 0
+    },
+    {
+      "name": "No.86 英豪冠军 击灭枪王王",
+      "nick_name": "NO.86 幻影骑士团 击灭枪王",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 赦俿王 死亡机降神",
+      "nick_name": "DDD本家椅子王",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 赦俿王 死亡机降神",
+      "nick_name": "DDD 机械降神",
+      "NK_type": 0
+    },
+    {
+      "name": "DDD 赦俿王 死亡机降神",
+      "nick_name": "机械降神",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "零一",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "闪刀姬零一",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "闪刀姬 零一",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "01",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "闪刀姬零依",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "闪刀姬 零依",
+      "NK_type": 0
+    },
+    {
+      "name": "崇光之宣告者",
+      "nick_name": "白丝",
+      "NK_type": 0
+    },
+    {
+      "name": "魔女术代理师傅",
+      "nick_name": "书书的老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "电子终结龙",
+      "nick_name": "老伙计",
+      "NK_type": 0
+    },
+    {
+      "name": "正义的同伴 海马侠",
+      "nick_name": "海马人",
+      "NK_type": 0
+    },
+    {
+      "name": "星杯的神子 夏娃",
+      "nick_name": "妹龙星",
+      "NK_type": 0
+    },
+    {
+      "name": "幻变骚灵·查询昆提兰那克",
+      "nick_name": "CXK",
+      "NK_type": 0
+    },
+    {
+      "name": "电子龙",
+      "nick_name": "塞巴多拉贡",
+      "NK_type": 1
+    },
+    {
+      "name": "被封印者的左足",
+      "nick_name": "裸足",
+      "NK_type": 0
+    },
+    {
+      "name": "爬虫妖女·美杜莎",
+      "nick_name": "群友的老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "爬虫妖女·美杜莎",
+      "nick_name": "你们的老婆",
+      "NK_type": 0
+    },
+    {
+      "name": "指出出目",
+      "nick_name": "我觉得不行",
+      "NK_type": 0
+    },
+    {
+      "name": "幻想之见习魔导师",
+      "nick_name": "黑妹",
+      "NK_type": 0
+    },
+    {
+      "name": "星尘龙",
+      "nick_name": "星渣",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙",
+      "nick_name": "烧烤龙",
+      "NK_type": 0
+    },
+    {
+      "name": "熔岩谷锁链龙",
+      "nick_name": "做牌龙",
+      "NK_type": 0
+    },
+    {
+      "name": "速攻同调士",
+      "nick_name": "牛仔",
+      "NK_type": 0
+    },
+    {
+      "name": "废品战士",
+      "nick_name": "劈叉战士",
+      "NK_type": 0
+    },
+    {
+      "name": "圣杯A",
+      "nick_name": "强欲之壶的背刺",
+      "NK_type": 0
+    },
+    {
+      "name": "破灭龙 甘多拉X",
+      "nick_name": "掀桌龙",
+      "NK_type": 0
+    },
+    {
+      "name": "迷犬 小玛栗",
+      "nick_name": "白狗",
+      "NK_type": 0
+    },
+    {
+      "name": "空牙团的载货 雷克斯",
+      "nick_name": "空牙团的饭桶",
+      "NK_type": 0
+    },
+    {
+      "name": "访问码语者",
+      "nick_name": "访问码语姬",
+      "NK_type": 0
+    },
+    {
+      "name": "随风旅鸟×帝企",
+      "nick_name": "帝骑",
+      "NK_type": 0
+    },
+    {
+      "name": "俱舍怒威族·芬里尔狼",
+      "nick_name": "B三狼",
+      "NK_type": 0
+    },
+    {
+      "name": "炎斩机 终末西格马",
+      "nick_name": "炎斩机 终末西格玛",
+      "NK_type": 0
+    },
+    {
+      "name": "兴奋童话动物家族",
+      "nick_name": "高达驾驶员",
+      "NK_type": 0
+    },
+    {
+      "name": "占术姬",
+      "nick_name": "反转姬",
+      "NK_type": 1
+    },
+    {
+      "name": "卫星闪灵双人交叉金臂勾",
+      "nick_name": "金抓钩",
+      "NK_type": 0
+    },
+    {
+      "name": "劈穿壹世坏的弦声",
+      "nick_name": "劈声",
+      "NK_type": 0
+    },
+    {
+      "name": "究极宝玉神 虹龙 超越",
+      "nick_name": "我超",
+      "NK_type": 0
+    },
+    {
+      "name": "阿不思的落胤",
+      "nick_name": "阿尔白丝",
+      "NK_type": 0
+    },
+    {
+      "name": "阿不思的落胤",
+      "nick_name": "阿尔卑斯",
+      "NK_type": 0
+    },
+    {
+      "name": "访问码语者",
+      "nick_name": "暗刀",
+      "NK_type": 0
+    },
+    {
+      "name": "星义绿廊兽",
+      "nick_name": "雷绿龙",
+      "NK_type": 0
+    },
+    {
+      "name": "消战者",
+      "nick_name": "肖战",
+      "NK_type": 0
+    },
+    {
+      "name": "究极宝玉神 虹龙 超越",
+      "nick_name": "家人除外神",
+      "NK_type": 0
+    },
+    {
+      "name": "唤醒你沉睡的元素英雄",
+      "nick_name": "醒醒侠",
+      "NK_type": 0
+    },
+    {
+      "name": "新空间侠·水波海豚",
+      "nick_name": "海豚哥",
+      "NK_type": 0
+    },
+    {
+      "name": "No.39 希望皇 霍普·升腾",
+      "nick_name": "霍普 升阶",
+      "NK_type": 0
+    },
+    {
+      "name": "No.39 希望皇 霍普·升腾",
+      "nick_name": "霍普升阶",
+      "NK_type": 0
+    },
+    {
+      "name": "宝玉兽 青玉飞马",
+      "nick_name": "全家的希望",
+      "NK_type": 0
+    },
+    {
+      "name": "究极宝玉神 虹桥龙",
+      "nick_name": "超越驱动",
+      "NK_type": 0
+    },
+    {
+      "name": "降雷皇 哈蒙",
+      "nick_name": "究极宝玉神哈蒙",
+      "NK_type": 0
+    },
+    {
+      "name": "降雷皇 哈蒙",
+      "nick_name": "究极宝玉神 哈蒙",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤兽 科库托斯奥",
+      "nick_name": "水召",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "涩涩",
+      "NK_type": 0
+    },
+    {
+      "name": "摸鱼的G",
+      "nick_name": "色色",
+      "NK_type": 0
+    },
+    {
+      "name": "电子龙",
+      "nick_name": "垫底龙",
+      "NK_type": 1
+    },
+    {
+      "name": "查卡姬",
+      "nick_name": "小小蓝",
+      "NK_type": 0
+    },
+    {
+      "name": "霞之谷的巨神鸟",
+      "nick_name": "巨肥鸟",
+      "NK_type": 0
+    },
+    {
+      "name": "御影志士",
+      "nick_name": "亚索",
+      "NK_type": 0
+    },
+    {
+      "name": "霞之谷的巨神鸟",
+      "nick_name": "肥鸟",
+      "NK_type": 0
+    },
+    {
+      "name": "PSY骨架王·Ω",
+      "nick_name": "绑架王",
+      "NK_type": 0
+    },
+    {
+      "name": "蛇发之咒眼",
+      "nick_name": "假眼",
+      "NK_type": 0
+    },
+    {
+      "name": "太阴之咒眼",
+      "nick_name": "真眼",
+      "NK_type": 0
+    },
+    {
+      "name": "暗之诱惑",
+      "nick_name": "暗抽",
+      "NK_type": 0
+    },
+    {
+      "name": "超天新龙 异色眼革命龙",
+      "nick_name": "超天酱",
+      "NK_type": 0
+    },
+    {
+      "name": "抹杀之指名者",
+      "nick_name": "刘华强",
+      "NK_type": 0
+    },
+    {
+      "name": "魔玩具·剪刀狼",
+      "nick_name": "狼神神威",
+      "NK_type": 0
+    },
+    {
+      "name": "网络小龙",
+      "nick_name": "裤裆藏龙",
+      "NK_type": 0
+    },
+    {
+      "name": "网络小龙",
+      "nick_name": "裤裆小龙",
+      "NK_type": 0
+    },
+    {
+      "name": "半龙女仆·龙女管家",
+      "nick_name": "蟹哥",
+      "NK_type": 0
+    },
+    {
+      "name": "电子界到临者@火灵天星",
+      "nick_name": "龟饲料",
+      "NK_type": 0
+    },
+    {
+      "name": "升灵术师 奘玄",
+      "nick_name": "唐僧",
+      "NK_type": 0
+    },
+    {
+      "name": "灵灭术师 海空",
+      "nick_name": "法海",
+      "NK_type": 0
+    },
+    {
+      "name": "欧尼斯特",
+      "nick_name": "人渣",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 魔性人",
+      "nick_name": "毛裤",
+      "NK_type": 0
+    },
+    {
+      "name": "力量结合",
+      "nick_name": "力量债卷",
+      "NK_type": 0
+    },
+    {
+      "name": "救祓少女·马尔法",
+      "nick_name": "救祓陀螺",
+      "NK_type": 0
+    },
+    {
+      "name": "仪式魔人 解放者",
+      "nick_name": "肥婆鸟",
+      "NK_type": 0
+    },
+    {
+      "name": "B-破坏龙兽",
+      "nick_name": "B哥",
+      "NK_type": 0
+    },
+    {
+      "name": "天霆号 阿宙斯",
+      "nick_name": "疯狂星期四",
+      "NK_type": 0
+    },
+    {
+      "name": "召唤兽 梅尔卡巴",
+      "nick_name": "校花",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "新生",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 毁灭凤凰人",
+      "nick_name": "校草",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管狞猛龙",
+      "nick_name": "柠檬龙",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之叛-吕奉",
+      "nick_name": "吕布",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之叛-吕奉",
+      "nick_name": "义父杀手",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之叛-吕奉",
+      "nick_name": "义父",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之仲-孙谋",
+      "nick_name": "孙十万",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之仲-孙谋",
+      "nick_name": "孙权",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之来-张远",
+      "nick_name": "张辽",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之来-张远",
+      "nick_name": "张八百",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之雄-张德",
+      "nick_name": "张飞",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之义-关云",
+      "nick_name": "关羽",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之孟-曹德",
+      "nick_name": "曹操",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之孟-曹德",
+      "nick_name": "曹贼",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之暴-董颖",
+      "nick_name": "董卓",
+      "NK_type": 0
+    },
+    {
+      "name": "战华之暴-董颖",
+      "nick_name": "董公",
+      "NK_type": 0
+    },
+    {
+      "name": "战华史略-三顾礼迎",
+      "nick_name": "三顾茅庐",
+      "NK_type": 0
+    },
+    {
+      "name": "战华史略-东南之风",
+      "nick_name": "借东风",
+      "NK_type": 0
+    },
+    {
+      "name": "战华史略-十万之失",
+      "nick_name": "草船借箭",
+      "NK_type": 0
+    },
+    {
+      "name": "零-最大",
+      "nick_name": "永火零",
+      "NK_type": 0
+    },
+    {
+      "name": "梦幻崩界 伊娃力丝",
+      "nick_name": "黑丝",
+      "NK_type": 0
+    },
+    {
+      "name": "抹杀之指名者",
+      "nick_name": "华强",
+      "NK_type": 0
+    },
+    {
+      "name": "青眼亚白龙",
+      "nick_name": "小姨子",
+      "NK_type": 0
+    },
+    {
+      "name": "宇宙旋风",
+      "nick_name": "精子风",
+      "NK_type": 0
+    },
+    {
+      "name": "幻变骚灵·查询昆提兰那克",
+      "nick_name": "蔡徐坤",
+      "NK_type": 0
+    },
+    {
+      "name": "山铜",
+      "nick_name": "奥利哈刚",
+      "NK_type": 1
+    },
+    {
+      "name": "超融合",
+      "nick_name": "焯融合",
+      "NK_type": 0
+    },
+    {
+      "name": "绝对王 J革命",
+      "nick_name": "翻车王",
+      "NK_type": 0
+    },
+    {
+      "name": "假面英雄 暗爪",
+      "nick_name": "交个朋友",
+      "NK_type": 0
+    },
+    {
+      "name": "亚马逊战士长",
+      "nick_name": "克罗",
+      "NK_type": 0
+    },
+    {
+      "name": "英雄到来",
+      "nick_name": "灰流丽到来",
+      "NK_type": 0
+    },
+    {
+      "name": "梦幻崩界 伊娃力丝",
+      "nick_name": "崩妹",
+      "NK_type": 0
+    },
+    {
+      "name": "访问码语者",
+      "nick_name": "拉拉米娅",
+      "NK_type": 0
+    },
+    {
+      "name": "球形栗子球",
+      "nick_name": "栗神龙",
+      "NK_type": 0
+    },
+    {
+      "name": "自奏圣乐·伽拉忒亚",
+      "nick_name": "蓝妹妹",
+      "NK_type": 0
+    },
+    {
+      "name": "自奏圣乐·朗基尔苏",
+      "nick_name": "蓝哥哥",
+      "NK_type": 0
+    },
+    {
+      "name": "守护龙 毗斯缇",
+      "nick_name": "左翅膀",
+      "NK_type": 0
+    },
+    {
+      "name": "守护龙 厄尔庇",
+      "nick_name": "右翅膀",
+      "NK_type": 0
+    },
+    {
+      "name": "守护龙 阿迦佩因",
+      "nick_name": "上下翅膀",
+      "NK_type": 0
+    },
+    {
+      "name": "块斩机 算子拉普拉斯",
+      "nick_name": "黑三叉",
+      "NK_type": 0
+    },
+    {
+      "name": "霸王烈龙 异色眼烈火龙",
+      "nick_name": "纯爱战士",
+      "NK_type": 0
+    },
+    {
+      "name": "星遗物印刻的伤痕",
+      "nick_name": "机界骑士天神荡",
+      "NK_type": 0
+    },
+    {
+      "name": "唤醒你沉睡的元素英雄",
+      "nick_name": "起床人",
+      "NK_type": 0
+    },
+    {
+      "name": "梭之七音服·格蕾西娅",
+      "nick_name": "刻晴",
+      "NK_type": 0
+    },
+    {
+      "name": "转辙地点",
+      "nick_name": "电车难题",
+      "NK_type": 0
+    },
+    {
+      "name": "转辙地点",
+      "nick_name": "列车难题",
+      "NK_type": 0
+    },
+    {
+      "name": "星遗物印刻的伤痕",
+      "nick_name": "机界骑士天神荡",
+      "NK_type": 0
+    },
+    {
+      "name": "纯爱妖精",
+      "nick_name": "丁真兽",
+      "NK_type": 1
+    },
+    {
+      "name": "俱舍怒威族",
+      "nick_name": "除圣",
+      "NK_type": 0
+    },
+    {
+      "name": "简素融合",
+      "nick_name": "调料包",
+      "NK_type": 0
+    },
+    {
+      "name": "励辉士 入魔蝇王",
+      "nick_name": "白小强",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管狂怒龙",
+      "nick_name": "紫枪管",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管增填龙",
+      "nick_name": "黑枪管",
+      "NK_type": 0
+    },
+    {
+      "name": "装弹枪管暴动龙",
+      "nick_name": "蓝枪管",
+      "NK_type": 0
+    },
+    {
+      "name": "海造贼-豪速之烈火号",
+      "nick_name": "火船",
+      "NK_type": 0
+    },
+    {
+      "name": "海造贼-双翼之光照号",
+      "nick_name": "光船",
+      "NK_type": 0
+    },
+    {
+      "name": "海造贼-庄重之大地号",
+      "nick_name": "地船",
+      "NK_type": 0
+    },
+    {
+      "name": "海造贼-静寂之暗夜号",
+      "nick_name": "暗船",
+      "NK_type": 0
+    },
+    {
+      "name": "海造贼-黑胡子船长",
+      "nick_name": "船长",
+      "NK_type": 0
+    },
+    {
+      "name": "虚无之统括者",
+      "nick_name": "大虚无",
+      "NK_type": 0
+    },
+    {
+      "name": "饼蛙",
+      "nick_name": "THE饼",
+      "NK_type": 0
+    },
+    {
+      "name": "饼蛙",
+      "nick_name": "the饼",
+      "NK_type": 0
+    },
+    {
+      "name": "壹世坏-珍珠世界",
+      "nick_name": "理塘",
+      "NK_type": 0
+    },
+    {
+      "name": "战华",
+      "nick_name": "三国",
+      "NK_type": 1
+    },
+    {
+      "name": "炎星",
+      "nick_name": "水浒",
+      "NK_type": 1
+    },
+    {
+      "name": "救援ACE队 消防栓",
+      "nick_name": "消防栓",
+      "NK_type": 0
+    },
+    {
+      "name": "救援ACE队 脉冲灭火员",
+      "nick_name": "消防员",
+      "NK_type": 0
+    },
+    {
+      "name": "食魂窃蛋龙",
+      "nick_name": "偷蛋龙",
+      "NK_type": 0
+    },
+    {
+      "name": "流天救世星龙",
+      "nick_name": "城之内",
+      "NK_type": 0
+    },
+    {
+      "name": "究极传导恐兽",
+      "nick_name": "恐龙王",
+      "NK_type": 0
+    },
+    {
+      "name": "霸王门 零",
+      "nick_name": "门铃",
+      "NK_type": 0
+    },
+    {
+      "name": "异色眼灵摆龙",
+      "nick_name": "走地鸡",
+      "NK_type": 0
+    },
+    {
+      "name": "升阶魔法",
+      "nick_name": "RUM",
+      "NK_type": 1
+    },
+    {
+      "name": "笨蛋",
+      "nick_name": "贰千",
+      "NK_type": 0
+    },
+    {
+      "name": "废物",
+      "nick_name": "你",
+      "NK_type": 0
+    },
+    {
+      "name": "惑星探查车",
+      "nick_name": "场地小车",
+      "NK_type": 0
+    },
+    {
+      "name": "元素英雄 新宇侠",
+      "nick_name": "亏卡侠",
+      "NK_type": 0
+    },
+    {
+      "name": "俱舍怒威族·芬里尔狼",
+      "nick_name": "只狼",
+      "NK_type": 0
+    },
+    {
+      "name": "魔救之奇迹-巨龙晶石",
+      "nick_name": "水魔救",
+      "NK_type": 0
+    },
+    {
+      "name": "电子终结龙",
+      "nick_name": "老朋友",
+      "NK_type": 0
+    },
+    {
+      "name": "光之创造神",
+      "nick_name": "洁厕灵",
+      "NK_type": 0
+    },
+    {
+      "name": "冰狱龙 三叉龙",
+      "nick_name": "紫三叉",
+      "NK_type": 0
+    },
+    {
+      "name": "三叉龙之影灵衣",
+      "nick_name": "蓝三叉",
+      "NK_type": 0
+    },
+    {
+      "name": "迷犬小玛栗",
+      "nick_name": "泥头车驾驶员",
+      "NK_type": 0
+    },
+    {
+      "name": "圣殿的水遣",
+      "nick_name": "洛琪希",
+      "NK_type": 0
+    },
+    {
+      "name": "O-超越灵魂",
+      "nick_name": "我超",
+      "NK_type": 0
+    },
+    {
+      "name": "超古深海王 空棘鱼",
+      "nick_name": "鱼王",
+      "NK_type": 0
+    },
+    {
+      "name": "纯爱妖精美味回忆",
+      "nick_name": "吃饭",
+      "NK_type": 0
+    },
+    {
+      "name": "纯爱妖精快乐回忆",
+      "nick_name": "玩球",
+      "NK_type": 0
+    },
+    {
+      "name": "纯爱妖精可爱回忆",
+      "nick_name": "洗澡",
+      "NK_type": 0
+    },
+    {
+      "name": "纯爱妖精瞌睡回忆",
+      "nick_name": "睡觉",
+      "NK_type": 0
+    },
+    {
+      "name": "命运英雄 魔性人",
+      "nick_name": "毛裤人",
+      "NK_type": 0
+    },
+    {
+      "name": "幻影英雄 三一人",
+      "nick_name": "农夫三拳",
+      "NK_type": 0
+    },
+    {
+      "name": "太阳神之翼神龙-球体形",
+      "nick_name": "翼神龙蛋",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬-零衣",
+      "nick_name": "刀门臣",
+      "NK_type": 0
+    },
+    {
+      "name": "青眼混沌极龙",
+      "nick_name": "一刀哥",
+      "NK_type": 0
+    },
+    {
+      "name": "斩机 圆武",
+      "nick_name": "园神",
+      "NK_type": 0
+    }
+  ]
+}
