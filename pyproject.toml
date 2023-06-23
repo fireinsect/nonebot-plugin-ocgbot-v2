@@ -1,9 +1,10 @@
-[project]
+[tool.poetry]
 name = "nonebot-plugin-ocgbot-v2"
-version = "0.1.1"
+version = "0.1.7"
 description = "nonebot-plugin-ocgbot-v2"
+authors = ["fireinsect <847954981@qq.com>"]
 readme = "README.md"
-requires-python = ">=3.8, <4.0"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
@@ -13,6 +14,7 @@ requests_html = ">=0.10.0"
 Pillow = ">=9.5.0"
 numpy = ">=1.25.0"
 matplotlib = ">=3.7.1"
+nonebot-plugin-localstore = "^0.4.0"
 
 [tool.nonebot]
 adapters = [
@@ -21,3 +23,7 @@ adapters = [
 plugins = []
 plugin_dirs = ["nonebot_plugin_ocgbot_v2"]
 builtin_plugins = ["echo"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -105,3 +105,58 @@ _✨ 提供游戏王相关服务 ✨_
 | 查卡方式 1/2/3 | 群员 | 否 | 群聊 | 设置查卡结果输出方式 |
 | 更新禁卡表 | 超管 | 否 | 群聊/私聊 | 从官网更新最新禁卡表信息 |
 
+##效果图
+<details>
+    <summary><b>帮助菜单</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/help.png">
+</details>
+<details>
+    <summary><b>卡牌查询</b></summary>
+    <details>
+        <summary>直接查询</summary>
+        <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/ck1.png">
+    </details>
+    <details>
+        <summary>输入数字选择具体查询</summary>
+        <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/ck2.png">
+    </details>
+    <details>
+        <summary>翻页</summary>
+        <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/ck3.png">
+    </details>
+</details>
+<details>
+    <summary><b>查询卡运</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/kayun.png">
+</details>
+<details>
+    <summary><b>随机一卡</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/chouk.png">
+</details>
+<details>
+    <summary><b>随机猜卡</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/caik.png">
+</details><details>
+    <summary><b>查询卡价</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/jg.png">
+
+</details>
+<details>
+    <summary><b>帮助菜单</b></summary>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/bt.png"> 
+</details>
+<details>
+    <summary><b>查卡方式</b></summary>
+    <h6>方式1</h6>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/chang1.png">
+    <br/>    
+    <h6>方式2</h6>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change2.png">
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change2-1.png"> 
+<br/>        
+    <h6>方式3</h6>
+    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change3.png">
+
+</details>
+
+

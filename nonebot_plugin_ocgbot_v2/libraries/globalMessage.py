@@ -1,3 +1,6 @@
+import os.path
+import pathlib
+
 import nonebot
 from nonebot import Config
 
@@ -45,9 +48,10 @@ guess_diff = [
 ]
 try:
     static_path = Config.parse_obj(nonebot.get_driver().config).static_path
+    if not os.path.exists(static_path):
+        raise Exception("不存在该文件夹")
 except:
-    static_path = "nonebot_plugin_ocgbot_v2/static/"
-
+    static_path = str(pathlib.Path(__file__).parent.parent).replace("\\", "/") + "/static/"
 json_path = static_path + "json/"
 font_path = static_path + "fonts/"
 cdb_path = static_path + "cdb/"
