@@ -1,8 +1,6 @@
-import copy
-import datetime
-from io import BytesIO
 
-import requests
+import datetime
+
 from PIL import Image, ImageFont, ImageDraw
 from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment

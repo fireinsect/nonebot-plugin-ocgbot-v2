@@ -1,9 +1,7 @@
 import base64
 from io import BytesIO
 
-import nonebot
 from PIL import ImageFont, ImageDraw, Image
-from nonebot import Config
 
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import font_path,image_path
 
