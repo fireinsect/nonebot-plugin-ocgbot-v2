@@ -9,6 +9,9 @@ requires-python = ">=3.8, <4.0"
 adapters = [
     { name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11" }
 ]
+dependencies = [
+    "nonebot2>=2.0.0",
+]
 plugins = []
-plugin_dirs = ["nonebot_plugin_ocgbot_v2/plugins"]
+plugin_dirs = ["nonebot_plugin_ocgbot_v2"]
 builtin_plugins = ["echo"]

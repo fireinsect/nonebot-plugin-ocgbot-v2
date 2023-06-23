@@ -44,7 +44,7 @@ guess_diff = [
     }
 ]
 try:
-    static_path = Config.parse_obj(nonebot.get_driver().config).STATIC_PATH
+    static_path = Config.parse_obj(nonebot.get_driver().config).static_path
 except:
     static_path = "nonebot_plugin_ocgbot_v2/static/"
 

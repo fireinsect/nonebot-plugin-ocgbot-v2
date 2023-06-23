@@ -1,7 +1,6 @@
 import json
-import os
 
-from requests_html import HTMLSession, Element
+from requests_html import HTMLSession
 
 from nonebot_plugin_ocgbot_v2.libraries.SqliteUtils import SqliteUtils
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, cdb_path
