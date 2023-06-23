@@ -3,10 +3,10 @@ import random
 import re
 from nonebot.adapters.onebot.v11 import Message, MessageSegment
 from nonebot_plugin_ocgbot_v2.libraries.Card import CardResult
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import noSearchText, lanName, static_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import noSearchText, lanName, pics_path
 from nonebot_plugin_ocgbot_v2.libraries.image import *
 
-static_url = static_path + "pics/"
+static_url = pics_path
 # 缩放比例
 PANTOGRAPH = 0.6
 

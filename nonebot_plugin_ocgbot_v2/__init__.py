@@ -2,7 +2,7 @@ import json
 import os.path
 from nonebot import logger, get_driver
 from nonebot_plugin_ocgbot_v2.libraries.forbideGet import forbiddenGet
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, static_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, static_path_abso
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import nick_name_0, nick_name_1, forbidden, daily_card
 from nonebot.plugin import PluginMetadata
 from .config import Config
@@ -70,9 +70,9 @@ async def dailyInit():
 
 async def init():
     logger.info("开始初始化")
-    if not os.path.exists(static_path + "pics"):
+    if not os.path.exists(pics_path):
         logger.info("未发现图片文件夹，已经创建")
-        os.mkdir(static_path + "pics")
+        os.mkdir(pics_path + "pics")
     await nickNameInit()
     await forbideInit()
     await dailyInit()

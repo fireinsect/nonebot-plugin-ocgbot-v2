@@ -6,7 +6,7 @@ from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment
 from nonebot.typing import T_State
 
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import static_path, image_path,font_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import  image_path, font_path, deck_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import daily_card
 from nonebot_plugin_ocgbot_v2.libraries.tool import hash
 from nonebot_plugin_ocgbot_v2.libraries.image import image_to_base64
@@ -37,7 +37,7 @@ def getDailyPic(point: int, wm_value):
         back_pic = Image.open(image_path + "daily_xilie.png")
     else:
         back_pic = Image.open(image_path + "daily_kapai.png")
-    url = static_path+f"deck/{card['id']}/{card['id']}-{no}.jpg"
+    url = deck_path+f"{card['id']}/{card['id']}-{no}.jpg"
     cardPic = Image.open(url)
     proper_list = []
     envy_list = []

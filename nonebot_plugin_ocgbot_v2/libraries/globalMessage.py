@@ -2,7 +2,7 @@ import os.path
 import pathlib
 
 import nonebot
-from nonebot import Config
+from nonebot import Config, logger
 
 random_sendwitchoutcd = [
     "欧尼酱！慢点慢点！",
@@ -46,13 +46,36 @@ guess_diff = [
         'time': 3
     }
 ]
+static_path_abso = str(pathlib.Path(__file__).parent.parent).replace("\\", "/") + "/static/"
+json_path = static_path_abso + "json/"
+font_path = static_path_abso + "fonts/"
+cdb_path = static_path_abso + "cdb/"
+image_path = static_path_abso + "images/"
+pics_path = static_path_abso + "pics/"
+deck_path = static_path_abso + "deck/"
+logger.info("静态文件路径检查中......")
 try:
-    static_path = Config.parse_obj(nonebot.get_driver().config).static_path
-    if not os.path.exists(static_path):
-        raise Exception("不存在该文件夹")
+    static_path_config = Config.parse_obj(nonebot.get_driver().config).static_path
+    if not os.path.exists(static_path_config):
+        logger.info("环境路径不存在.....")
+    else:
+        if os.path.exists(static_path_config + "json/"):
+            json_path = static_path_config + "json/"
+            logger.info("环境路径存在json文件夹，已使用")
+        if os.path.exists(static_path_config + "fonts/"):
+            json_path = static_path_config + "fonts/"
+            logger.info("环境路径存在fonts文件夹，已使用")
+        if os.path.exists(static_path_config + "cdb/"):
+            json_path = static_path_config + "cdb/"
+            logger.info("环境路径存在cdb文件夹，已使用")
+        if os.path.exists(static_path_config + "images/"):
+            json_path = static_path_config + "images/"
+            logger.info("环境路径存在images文件夹，已使用")
+        if os.path.exists(static_path_config + "pics/"):
+            json_path = static_path_config + "pics/"
+            logger.info("环境路径存在pics文件夹，已使用")
+        if os.path.exists(static_path_config + "deck/"):
+            json_path = static_path_config + "deck/"
+            logger.info("环境路径存在deck文件夹，已使用")
 except:
-    static_path = str(pathlib.Path(__file__).parent.parent).replace("\\", "/") + "/static/"
-json_path = static_path + "json/"
-font_path = static_path + "fonts/"
-cdb_path = static_path + "cdb/"
-image_path = static_path + "images/"
+    logger.info("不存在环境路径，使用本地路径....")

@@ -105,7 +105,7 @@ _✨ 提供游戏王相关服务 ✨_
 | 查卡方式 1/2/3 | 群员 | 否 | 群聊 | 设置查卡结果输出方式 |
 | 更新禁卡表 | 超管 | 否 | 群聊/私聊 | 从官网更新最新禁卡表信息 |
 
-##效果图
+## 效果图
 <details>
     <summary><b>帮助菜单</b></summary>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/help.png">

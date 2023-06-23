@@ -10,7 +10,7 @@ from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 
 from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import guess_diff, static_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import guess_diff, pics_path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # 将父级目录加入执行目录列表
 from nonebot_plugin_ocgbot_v2.libraries.image import *
@@ -31,7 +31,7 @@ from nonebot_plugin_ocgbot_v2.libraries.guessManage import guessCardManager
 # print(card.cardId)
 # print(card.deff)
 
-cardUrl = static_path + "pics/"
+cardUrl = pics_path
 guessCard = on_command('游戏王猜卡', aliases={'猜一张卡'})
 aiguessCard = on_command('ai猜卡')
 gm = guessCardManager()
@@ -42,7 +42,7 @@ TIME = guess_diff[0].get("time")
 
 # ai猜卡常量
 # 本地图片应为 cardId+.jpg形式命名 存放在static/aicard 文件夹下
-# cardImgPath = static_path+"aicard/"
+# cardImgPath = static_path_abso+"aicard/"
 # img_list = os.listdir(cardImgPath)
 
 
