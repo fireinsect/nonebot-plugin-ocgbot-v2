@@ -158,11 +158,11 @@ _✨ 提供游戏王相关服务 ✨_
     <summary><b>查卡方式</b></summary>
     <h3>方式1</h3>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/chang1.png">
-    <br/>    
+    <hr/>    
     <h3>方式2</h3>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change2.png">
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change2-1.png"> 
-<br/>        
+    <hr/>        
     <h3>方式3</h3>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change3.png">
 
