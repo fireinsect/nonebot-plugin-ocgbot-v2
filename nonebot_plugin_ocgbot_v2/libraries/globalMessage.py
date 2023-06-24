@@ -55,7 +55,10 @@ pics_path = static_path_abso + "pics/"
 deck_path = static_path_abso + "deck/"
 logger.info("静态文件路径检查中......")
 try:
-    static_path_config = Config.parse_obj(nonebot.get_driver().config).static_path
+    static_path_config = str(Config.parse_obj(nonebot.get_driver().config).static_path)
+    logger.info(static_path_config)
+    if not (static_path_config.endswith("/") or static_path_config.endswith("\\")):
+        static_path_config = static_path_config + "/"
     if not os.path.exists(static_path_config):
         logger.info("环境路径不存在.....")
     else:
@@ -63,19 +66,20 @@ try:
             json_path = static_path_config + "json/"
             logger.info("环境路径存在json文件夹，已使用")
         if os.path.exists(static_path_config + "fonts/"):
-            json_path = static_path_config + "fonts/"
+            font_path = static_path_config + "fonts/"
             logger.info("环境路径存在fonts文件夹，已使用")
         if os.path.exists(static_path_config + "cdb/"):
-            json_path = static_path_config + "cdb/"
+            cbd_path = static_path_config + "cdb/"
             logger.info("环境路径存在cdb文件夹，已使用")
         if os.path.exists(static_path_config + "images/"):
-            json_path = static_path_config + "images/"
+            image_path = static_path_config + "images/"
             logger.info("环境路径存在images文件夹，已使用")
         if os.path.exists(static_path_config + "pics/"):
-            json_path = static_path_config + "pics/"
+            pics_path = static_path_config + "pics/"
+            logger.info(pics_path)
             logger.info("环境路径存在pics文件夹，已使用")
         if os.path.exists(static_path_config + "deck/"):
-            json_path = static_path_config + "deck/"
+            deck_path = static_path_config + "deck/"
             logger.info("环境路径存在deck文件夹，已使用")
 except:
     logger.info("不存在环境路径，使用本地路径....")
