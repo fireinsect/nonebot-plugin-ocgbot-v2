@@ -171,6 +171,7 @@ def getCard(name: str, page="1") -> CardResult:
             cards = searchByName(name)  # 这里写name获取方法
     else:
         cards = searchByName(name)  # 这里写name获取方法
+    print(cards)
     return getCardResult(cards, pageint)  # 这里写分页算法
 
 
@@ -210,7 +211,7 @@ def forbiddenChange(cards: []):
 
 
 def searchById(cid):
-    sql = "texts.id=" + cid
+    sql = "texts.id=" + str(cid)
     # sql = "select * from texts LEFT JOIN datas on texts.id = datas.id where texts.id = {0} GROUP BY texts.name;"
     # cursor.execute(sql.format(cid))
     # cards = []

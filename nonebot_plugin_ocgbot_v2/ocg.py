@@ -47,20 +47,23 @@ async def _(bot: Bot, event: Event, state: T_State, args: Message = CommandArg()
     text = str(args).strip()
     if text == "":
         await search_card.finish("请输入需要查询的卡名")
+    match = re.match(regex, text)
     try:
-        match = re.match(regex, text)
-        if match:
-            search_group = match.groups()
-        else:
-            text += " 1"
-            match = re.match(regex, text)
-            search_group = match.groups()
+        search_group = match.groups()
+        if search_group[1] is None:
+            raise Exception()
+    except:
+        text = text + " 1"
+        search_group = re.match(regex, text).groups()
+    try:
         state['name'] = search_group[0]
         state['page'] = search_group[1]
         js = getCard(state['name'], state['page'])
     except Exception as e:
         print(e)
         await search_card.finish("咿呀？查询失败了呢")
+    for search in search_group:
+        print(search)
     if int(search_group[1]) > int(js.pageNum):
         await search_card.finish("页码超出最大值" + "`" + str(js.pageNum) + "`")
     state['js'] = js
@@ -107,18 +110,18 @@ async def _(bot: Bot, event: Event, state: T_State):
             else:
                 page = page + 1
                 state['page'] = page
-                flag=1
+                flag = 1
         elif text == "上一页":
             if page == 1:
                 await search_card.reject("欧尼酱~已经是第一页了~")
             else:
                 page = page - 1
                 state['page'] = page
-                flag=1
+                flag = 1
         else:
             await search_card.finish()
         if flag is not None:
-            js = getCard(name,str(page))
+            js = getCard(name, str(page))
             state['js'] = js
             if js.amount == 0:
                 await sendNosearch(search_card)

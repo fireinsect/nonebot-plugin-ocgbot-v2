@@ -10,7 +10,7 @@ from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 
 from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import guess_diff, pics_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import *
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # 将父级目录加入执行目录列表
 from nonebot_plugin_ocgbot_v2.libraries.image import *
@@ -66,7 +66,7 @@ def verifySid(sid: str):
         return False
 
 # ai猜卡（自定义猜卡功能，发送本地图片进行猜卡）
-# @aiguessCard.handle()
+# @aiGuessCard.handle()
 # async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
 #     sessionId = None
 #     groupSession = None
@@ -83,7 +83,7 @@ def verifySid(sid: str):
 #         userType = 'SU' if (str(event.user_id) in nonebot.get_driver().config.superusers) else userType
 #         gm.CheckPermission(sessionId, groupSession, userType)
 #     except PermissionError as e:
-#         await aiguessCard.finish(str(e))
+#         await aiGuessCard.finish(str(e))
 #     try:
 #         rand = random.randint(0, len(img_list))
 #         id = str(img_list[rand]).split('.')[0]
@@ -100,14 +100,14 @@ def verifySid(sid: str):
 #         ori_image = Image.open(ori_pics_url)
 #         state['image'] = ori_image
 #         gm.UpdateLastSend(sessionId)
-#         await guessCard.send([
+#         await aiGuessCard.send([
 #             MessageSegment.at(user_id=event.sender.user_id),
-#             MessageSegment.text(text="欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
+#             MessageSegment.text(text="臭欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
 #             MessageSegment.image(f"base64://{str(image_to_base64(image), encoding='utf-8')}")
 #         ])
 #     except Exception as e:
 #         print(e)
-#         await guessCard.finish("咿呀？启动失败了呢")
+#         await aiGuessCard.finish("咿呀？启动失败了呢")
 #
 #
 # @aiguessCard.got("name")
@@ -115,45 +115,52 @@ def verifySid(sid: str):
 #     name = str(state['name'])
 #     card = state['card']
 #     if name == "不知道" or name == "跳过":
-#         await guessCard.finish([
+#         await aiGuessCard.finish([
 #             MessageSegment.at(user_id=event.sender.user_id),
-#             MessageSegment.text(text="结束啦，答案是{0}!".format(card.name)),
+#              MessageSegment.text(text=guess_skip[random.randint(0, len(guess_skip) - 1)].format(card.name)),
 #             MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
 #         ])
 #
 #     js = getCard(name)
-#     # card.name != js['data']['cards'][0]['name']
+#     # card.name != js.cards[0].name
 #     if js.cards is None or isGuessWin(js, card.name):
 #         if state['time'] == 1:
-#             await guessCard.finish([
+#             await aiGuessCard.finish([
 #                 MessageSegment.at(user_id=event.sender.user_id),
-#                 MessageSegment.text(text="结束啦，答案是{0}!".format(card.name)),
+#                 MessageSegment.text(text=guess_lose[random.randint(0, len(guess_lose) - 1)].format(card.name)),
 #                 MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
 #             ])
 #         else:
 #             if state['time'] == 3:
-#                 hint = MessageSegment.text(text="这张卡是{0}卡哟！".format(card.mainType))
+#                 hint = MessageSegment.text(
+#                     text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("是" + card.mainType + "卡"))
 #             elif state['time'] == 2:
 #                 if card.mainType == '怪兽':
 #                     ran = random.randint(0, 2)
 #                     if ran == 0:
-#                         hint = MessageSegment.text(text="这张卡种族是{0}哟！".format(card.zz))
+#                         hint = MessageSegment.text(
+#                             text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("种族是" + card.zz))
+#
 #                     elif ran == 1:
-#                         hint = MessageSegment.text(text="这张卡属性是{0}哟！".format(card.attribute))
+#                         hint = MessageSegment.text(
+#                             text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("属性是" + card.attribute))
+#
 #                     else:
-#                         hint = MessageSegment.text(text="这张卡完整类型是{0}哟！".format(card.type))
+#                         hint = MessageSegment.text(
+#                             text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("完整类型是" + card.type))
 #                 else:
-#                     hint = MessageSegment.text(text="这张卡完整类型是{0}哟！".format(card.type))
+#                     hint = MessageSegment.text(
+#                         text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("完整类型是" + card.type))
 #             state['time'] = state['time'] - 1
-#             await guessCard.reject([
+#             await aiGuessCard.reject([
 #                 MessageSegment.at(user_id=event.sender.user_id),
-#                 MessageSegment.text(text="猜错了啦，你还有{0}次机会！".format(state['time'])),
-#                 hint
+#                 hint,
+#                 MessageSegment.text(text="\r\n还有{0}次机会！".format(state['time']))
 #             ])
 #     else:
-#         await guessCard.finish([
+#         await aiguessCard.finish([
 #             MessageSegment.at(user_id=event.sender.user_id),
-#             MessageSegment.text(text="欧尼酱！好厉害~猜对啦，答案是{0}!".format(card.name)),
+#             MessageSegment.text(text=guess_win[random.randint(0, len(guess_win) - 1)].format(card.name)),
 #             MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
 #         ])
 
@@ -198,7 +205,7 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
         gm.UpdateLastSend(sessionId)
         await guessCard.send([
             MessageSegment.at(user_id=event.sender.user_id),
-            MessageSegment.text(text="欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
+            MessageSegment.text(text="臭欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
             MessageSegment.image(f"base64://{str(image_to_base64(image), encoding='utf-8')}")
         ])
     except Exception as e:
@@ -208,47 +215,51 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
 @guessCard.got("name")
 async def test_(bot: Bot, event: GroupMessageEvent, state: T_State):
     name = str(state['name'])
+    print(name)
     card = state['card']
     if name == "不知道" or name == "跳过":
         await guessCard.finish([
             MessageSegment.at(user_id=event.sender.user_id),
-            MessageSegment.text(text="结束啦，答案是{0}!".format(card.name)),
+            MessageSegment.text(text=guess_skip[random.randint(0, len(guess_skip) - 1)].format(card.name)),
             MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
         ])
-
     js = getCard(name)
-    # card.name != js['data']['cards'][0]['name']
     if js.cards is None or isGuessWin(js, card.name, name):
         if state['time'] == 1:
             await guessCard.finish([
                 MessageSegment.at(user_id=event.sender.user_id),
-                MessageSegment.text(text="结束啦，答案是{0}!".format(card.name)),
+                MessageSegment.text(text=guess_lose[random.randint(0, len(guess_lose) - 1)].format(card.name)),
                 MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
             ])
         else:
             if state['time'] == 3:
-                hint = MessageSegment.text(text="这张卡是{0}卡哟！".format(card.mainType))
+                hint = MessageSegment.text(
+                    text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("是" + card.mainType + "卡"))
             elif state['time'] == 2:
                 if card.mainType == '怪兽':
                     ran = random.randint(0, 2)
                     if ran == 0:
-                        hint = MessageSegment.text(text="这张卡种族是{0}哟！".format(card.zz))
+                        hint = MessageSegment.text(
+                            text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("种族是" + card.zz))
                     elif ran == 1:
-                        hint = MessageSegment.text(text="这张卡属性是{0}哟！".format(card.attribute))
+                        hint = MessageSegment.text(
+                            text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("属性是" + card.attribute))
                     else:
-                        hint = MessageSegment.text(text="这张卡完整类型是{0}哟！".format(card.type))
+                        hint = MessageSegment.text(
+                            text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("完整类型是" + card.type))
                 else:
-                    hint = MessageSegment.text(text="这张卡完整类型是{0}哟！".format(card.type))
+                    hint = MessageSegment.text(
+                        text=guess_tips[random.randint(0, len(guess_tips) - 1)].format("完整类型是" + card.type))
             state['time'] = state['time'] - 1
             await guessCard.reject([
                 MessageSegment.at(user_id=event.sender.user_id),
-                MessageSegment.text(text="猜错了啦，你还有{0}次机会！".format(state['time'])),
-                hint
+                hint,
+                MessageSegment.text(text="\r\n还有{0}次机会！".format(state['time']))
             ])
     else:
         await guessCard.finish([
             MessageSegment.at(user_id=event.sender.user_id),
-            MessageSegment.text(text="欧尼酱！好厉害~猜对啦，答案是{0}!".format(card.name)),
+            MessageSegment.text(text=guess_win[random.randint(0, len(guess_win) - 1)].format(card.name)),
             MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")
         ])
 
@@ -257,12 +268,12 @@ async def test_(bot: Bot, event: GroupMessageEvent, state: T_State):
 def isGuessWin(js, cardName, name) -> bool:
     if name is cardName:
         return False
-    if js['data']['amount'] <= 5:
-        for card in js['data']['cards']:
-            if card['name'] == cardName:
+    if js.amount <= 5:
+        for card in js.cards:
+            if card.name == cardName:
                 return False
     else:
-        if js['data']['cards'][0]['name'] == cardName:
+        if js.cards[0].name == cardName:
             return False
     return True
 
