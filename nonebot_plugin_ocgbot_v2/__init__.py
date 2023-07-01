@@ -9,6 +9,13 @@ from nonebot_plugin_ocgbot_v2.libraries.forbideGet import forbiddenGet
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, static_path_abso, deck_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import nick_name_0, nick_name_1, forbidden, daily_card
 from nonebot.plugin import PluginMetadata
+import nonebot_plugin_ocgbot_v2.data_update
+import nonebot_plugin_ocgbot_v2.ocg
+import nonebot_plugin_ocgbot_v2.guess_card
+import nonebot_plugin_ocgbot_v2.help
+import nonebot_plugin_ocgbot_v2.daily
+import nonebot_plugin_ocgbot_v2.cardPieChart
+import nonebot_plugin_ocgbot_v2.priceSearch
 from .config import Config
 
 __plugin_meta__ = PluginMetadata(
@@ -45,7 +52,7 @@ async def download_url(url: str) -> bytes:
     raise NetworkError(f"{url} 下载失败！")
 
 
-async def saveImg(wj_path: str, img: bytes):
+def saveImg(wj_path: str, img: bytes):
     with open(wj_path, "wb") as f:  # 文件写入
         f.write(img)
 
@@ -54,7 +61,7 @@ async def download(wjs_path, wj, deck):
     wj_path = wjs_path + "/" + wj
     if not os.path.exists(wj_path):
         byte = await download_url(deck_url + "{0}/{1}".format(deck, wj))
-        await saveImg(wj_path, byte)
+        saveImg(wj_path, byte)
         logger.info("图片{0}下载成功".format(wj))
 
 

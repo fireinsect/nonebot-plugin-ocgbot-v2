@@ -198,7 +198,6 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
             image = image.crop((30, 110, 370, 357))
         else:
             image = image.crop((52, 110, 348, 407))
-        print(card.name)
         image = getGuessImg(image)
         state['time'] = TIME
         state['image'] = re_image
@@ -215,7 +214,6 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
 @guessCard.got("name")
 async def test_(bot: Bot, event: GroupMessageEvent, state: T_State):
     name = str(state['name'])
-    print(name)
     card = state['card']
     if name == "不知道" or name == "跳过":
         await guessCard.finish([

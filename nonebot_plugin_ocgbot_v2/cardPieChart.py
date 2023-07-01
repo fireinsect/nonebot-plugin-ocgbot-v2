@@ -36,7 +36,6 @@ async def test(bot: Bot, event: Event, state: T_State):
     elseCount = 0
     fm.fontManager.addfont(font_path)
     prop = fm.FontProperties(fname=font_path)
-    print(prop.get_name())
     plt.rcParams['font.family'] = prop.get_name()
     plt.rcParams['font.sans-serif'] = prop.get_name()
     plt.rcParams['axes.unicode_minus'] = False
