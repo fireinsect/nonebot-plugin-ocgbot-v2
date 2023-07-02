@@ -241,7 +241,7 @@ def getPicOnlyMessage(js, num, url):
             {
                 # "file": f"base64://{str(image_to_base64(Image.open('src/static/pics/' + str(js['data'][
                 # 'cards'][0]['cardId']) + '.jpg')), encoding='utf-8')}"
-                "file": f"base64://{str(image_to_base64(url), encoding='utf-8')}"
+                "file": f"base64://{str(image_to_base64(Image.open(url)), encoding='utf-8')}"
             }
         )
     ])
