@@ -82,7 +82,7 @@ _✨ 提供游戏王相关服务 ✨_
 | STATIC_PATH |  否  | 存在 | static文件夹路径，用于存放静态文件 |
 |    SUPERUSERS     |  否 | 无 | 超管账号，为字符串数组 |
 
-注：STATIC_PATH可以填写外部静态文件夹地址，该地址下可以包含`cdb json pics font images deck` 几个文件夹，如果存在此文件夹，插件会使用该文件夹作为对应静态文件的调用路径（几个文件夹的调用独立）
+注：STATIC_PATH可以填写外部静态文件夹地址，该地址下可以包含`cdb json pics font images decks` 几个文件夹，如果存在此文件夹，插件会使用该文件夹作为对应静态文件的调用路径（几个文件夹的调用独立）
 
 如在`E:\YGOPro`下存在pics文件夹，即可填写`STATIC_PATH="E:\YGOPro"`,此时会使用该目录下的pics作为卡图调用路径。
 
