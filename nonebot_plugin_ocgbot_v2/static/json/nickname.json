@@ -2369,6 +2369,36 @@
       "name": "斩机 圆武",
       "nick_name": "园神",
       "NK_type": 0
+    },
+    {
+      "name": "斩机 圆武",
+      "nick_name": "斩机弓形",
+      "NK_type": 0
+    },
+    {
+      "name": "斩机 圆武",
+      "nick_name": "弓形",
+      "NK_type": 0
+    },
+    {
+      "name": "斩机 圆武",
+      "nick_name": "GENSHIN",
+      "NK_type": 0
+    },
+    {
+      "name": "闪刀姬",
+      "nick_name": "傻刀",
+      "NK_type": 1
+    },
+    {
+      "name": "冰剑龙 幻冰龙",
+      "nick_name": "冰蛆",
+      "NK_type": 0
+    },
+    {
+      "name": "神碑之泉",
+      "nick_name": "洗手池",
+      "NK_type": 0
     }
   ]
 }

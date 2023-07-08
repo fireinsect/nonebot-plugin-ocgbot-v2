@@ -102,9 +102,13 @@ class Card(Dict):
             if item == "atk":
                 if types[0] == "怪兽":
                     return str(self[item]) if str(self[item]) != "-2" else "?"
+                else:
+                    return None
             if item == "deff":
                 if types[0] == "怪兽" and "连接" not in types:
                     return str(self['def']) if str(self['def']) != "-2" else "?"
+                else:
+                    return None
             if item == "attribute":
                 return getAttribute(str(hex(self['attribute'])))
 
@@ -171,7 +175,6 @@ def getCard(name: str, page="1") -> CardResult:
             cards = searchByName(name)  # 这里写name获取方法
     else:
         cards = searchByName(name)  # 这里写name获取方法
-    print(cards)
     return getCardResult(cards, pageint)  # 这里写分页算法
 
 

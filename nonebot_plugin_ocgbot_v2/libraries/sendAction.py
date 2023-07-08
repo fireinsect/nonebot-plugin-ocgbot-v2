@@ -263,6 +263,7 @@ async def send_cards_byCard(js, func):
         # if car['enName'] is not None:
         #     result += "英文卡名-" + car['enName'] + "     " + "日文卡名-" + car['jpName'] + "\n"
         car.effect = car.effect.replace('\r', '')
+        print(car.deff)
         if car.mainType == '怪兽':
             if car.deff is None:
                 result += car.level + ' / ATK: ' + car.atk + ' / : ' + car.zz + ' / ' + car.attribute + "\n"

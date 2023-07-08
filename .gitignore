@@ -177,3 +177,5 @@ pyrightconfig.json
 !.vscode/*.code-snippets
 /data/
 /nonebot_plugin_ocgbot_v2/libraries/test.py
+/nonebot_plugin_ocgbot_v2/static/decks/*
+!/nonebot_plugin_ocgbot_v2/static/decks/.json

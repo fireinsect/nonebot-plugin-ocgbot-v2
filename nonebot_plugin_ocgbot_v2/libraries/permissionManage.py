@@ -80,7 +80,7 @@ class PermissionManager:
             else:
                 seconds = timeLeft
             cd_msg = f"{str(round(hours)) + '小时' if hours else ''}{str(round(minutes)) + '分钟' if minutes else ''}{str(round(seconds,3)) + '秒' if seconds else ''}"
-            raise PermissionError(f"{random.choice(random_sendwitchoutcd)} 你的CD还有{cd_msg}！")
+            raise PermissionError(f"{random_sendwitchoutcd()} 你的CD还有{cd_msg}！")
     # --------------- 逻辑判断 结束 ---------------
 
     # --------------- 冷却更新 开始 ---------------
