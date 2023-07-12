@@ -2,10 +2,6 @@
   <a href="https://v2.nonebot.dev/store"><img src="https://github.com/A-kirami/nonebot-plugin-template/blob/resources/nbp_logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
   <br>
   <p><img src="https://github.com/A-kirami/nonebot-plugin-template/blob/resources/NoneBotPlugin.svg" width="240" alt="NoneBotPluginText"></p>
-<img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FNCBM%2Ftest-nonebot-packages-stats%2Fraw%2Fmain%2Fstatistics.json&query=%24%5B'nonebot-plugin-ocgbot-v2'%5D.down30&suffix=%2Fmonth&label=downloads&labelColor=blue&color=green">
-
-
-
 </div>
 
 <div align="center">
@@ -25,6 +21,10 @@ _✨ 提供游戏王相关服务 ✨_
      <img src="https://img.shields.io/badge/QQ%E7%BE%A4-144718588-orange?style=flat-square" alt="QQ Chat Group">
 </a>
 <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
+
+<img alt="download times" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FNCBM%2Ftest-nonebot-packages-stats%2Fraw%2Fmain%2Fstatistics.json&query=%24%5B'nonebot-plugin-ocgbot-v2'%5D.down30&suffix=%2Fmonth&label=downloads&labelColor=blue&color=green">
+
+
 
 </div>
 
