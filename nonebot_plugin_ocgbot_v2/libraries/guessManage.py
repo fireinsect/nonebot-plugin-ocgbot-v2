@@ -19,10 +19,7 @@ except:
 class guessCardManager:
     def __init__(self) -> None:
         # 读取全局变量
-        try:
-            self.path = str(Path(nonebot.get_driver().config.ocg_bot_guess_cfg_path, 'ocg_bot_guess_cfg.json'))
-        except:
-            self.path = 'data/ocg_bot/ocg_bot_guess_cfg.json'
+        self.path = 'data/ocg_bot/ocg_bot_guess_cfg.json'
         self.guess_cd = 20
         self.guess_cd = self.guess_cd if self.guess_cd > 0 else 0
         # 读取perm_cfg

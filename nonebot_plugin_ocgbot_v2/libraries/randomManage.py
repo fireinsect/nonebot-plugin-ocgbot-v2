@@ -10,7 +10,7 @@ except:
     import json
 
 
-class PermissionManager:
+class RandomManager:
     def __init__(self) -> None:
         # 读取全局变量
         self.path = 'data/ocg_bot/ocg_bot_cfg.json'

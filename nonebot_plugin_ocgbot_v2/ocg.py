@@ -12,9 +12,9 @@ from nonebot import on_command
 from nonebot_plugin_ocgbot_v2.libraries.Card import getCard, getRandomCard
 from nonebot_plugin_ocgbot_v2.libraries.searchManage import SearchManager
 from nonebot_plugin_ocgbot_v2.libraries.sendAction import *
-from nonebot_plugin_ocgbot_v2.libraries.permissionManage import PermissionManager
+from nonebot_plugin_ocgbot_v2.libraries.randomManage import RandomManager
 
-pm = PermissionManager()
+pm = RandomManager()
 sm = SearchManager()
 
 
