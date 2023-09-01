@@ -36,6 +36,8 @@ _✨ 提供游戏王相关服务 ✨_
 
 本插件提供了游戏王相关的服务，包括但不限于查卡、随机一卡、猜卡、查卡价、查饼图、查卡运等
 
+详细搭建方式请查看 [ocgbot-BuildGuide](https://github.com/fireinsect/doc_save/blob/master/ocg-bot-v2-BuildGuide.md)（结合本文档食用）
+
 ## 💿 安装
 
 <details>
