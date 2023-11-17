@@ -50,15 +50,15 @@ async def test(bot: Bot, event: Event, state: T_State):
     colors = plt.get_cmap('Blues')(numpy.linspace(0.9, 0.2, len(date_list)))
     fig = plt.figure("pie", frameon=False)
     canvas = fig.canvas
-    plt.title("ygo饼图", fontsize=33, x=0.42, y=1.05)
+    plt.title("ygo饼图", fontsize=33, x=0.5, y=1.02)
     patches, l_text, p_text = plt.pie(count_list, labels=date_list, colors=colors, autopct='%1.1f%%')
     for t in l_text:
-        t.set_size(17)
+        t.set_size(16)
     for t in p_text:
-        t.set_size(17)
+        t.set_size(15)
     plt.axis('off')
 
-    fig.set_size_inches(512 / 93, 512 / 93)
+    fig.set_size_inches(512 / 80, 512 / 80)
 
     plt.gca().xaxis.set_major_locator(plt.NullLocator())  # plt.gca()表示获取当前子图"Get Current Axes"。
 
@@ -82,7 +82,7 @@ async def test(bot: Bot, event: Event, state: T_State):
 
     back_width, back_height = img_back.size
 
-    loca = (int((back_width - pie_width) / 2), int((back_height - pie_height) / 2))
+    loca = (int((back_width - pie_width) / 2), int((back_height - pie_height) / 2)+20)
 
     img_back.paste(img, loca, mask=img)
 

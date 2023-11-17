@@ -48,7 +48,7 @@ async def download_url(url: str) -> bytes:
                 return resp.content
             except Exception as e:
                 logger.warning(f"Error downloading {url}, retry {i}/3: {e}")
-                await asyncio.sleep(3)
+                await asyncio.sleep(1)
     raise NetworkError(f"{url} 下载失败！")
 
 

@@ -15,6 +15,7 @@ Pillow = "<=9.5.0"
 httpx = ">=0.20.0,<1.0.0"
 numpy = ">=1.23.0"
 matplotlib = ">=3.7.1"
+pil_utils = ">=0.1.7"
 nonebot-plugin-localstore = "^0.4.0"
 
 [tool.nonebot]
