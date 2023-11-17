@@ -75,6 +75,9 @@ message_type = [
                 "##❤~连{0}都答不上来~真是飞舞❤~",
                 "行不行啊❤~##，连{0}都猜不到~",
             ],
+            'timeout': [
+                "时间到啦！##连这都不会吗？答案是{0}",
+            ],
             'win': [
                 "哎，竟然答对了吗？真无聊❤~答案就是{0}啦",
                 "##竟然答对了❤~答案是{0}",
@@ -125,6 +128,9 @@ message_type = [
                 "答案是{0}哦~，##再接再厉吧~",
                 "QWQ既然##不会，那么小蓝告诉你答案吧，是{0}哦~"
             ],
+            'timeout': [
+                "时间到啦！答案是{0}哦~",
+            ],
             'win': [
                 "##好厉害！答案就是{0}啦",
                 "##答对了！（崇拜眼）答案是{0}",
@@ -161,22 +167,27 @@ def guess_sendwitchoutcd() -> str:
 
 # ##字当作称呼的替换符
 def guess_tips() -> str:
-    arr = arr = message_type[mess_type_choose]['guess']['tips']
+    arr = message_type[mess_type_choose]['guess']['tips']
     return "\r\n" + choice(arr).replace("##", get_named())
 
 
 def guess_lose() -> str:
-    arr = arr = message_type[mess_type_choose]['guess']['lose']
+    arr = message_type[mess_type_choose]['guess']['lose']
     return "\r\n" + choice(arr).replace("##", get_named())
 
 
 def guess_skip() -> str:
-    arr = arr = message_type[mess_type_choose]['guess']['skip']
+    arr = message_type[mess_type_choose]['guess']['skip']
     return "\r\n" + choice(arr).replace("##", get_named())
 
 
+def guess_timeout() -> str:
+    arr = message_type[mess_type_choose]['guess']['timeout']
+    return choice(arr).replace("##", get_named())
+
+
 def guess_win() -> str:
-    arr = arr = message_type[mess_type_choose]['guess']['win']
+    arr = message_type[mess_type_choose]['guess']['win']
     return "\r\n" + choice(arr).replace("##", get_named())
 
 
@@ -210,7 +221,8 @@ guess_diff = [
     {
         'resize': 7,
         'cutsize': 6,
-        'time': 3
+        'time': 3,
+        'timeout': 100
     }
 ]
 static_path_abso = str(pathlib.Path(__file__).parent.parent).replace("\\", "/") + "/static/"
