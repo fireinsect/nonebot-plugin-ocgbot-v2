@@ -35,7 +35,7 @@ def verifySid(sid: str):
 # ===============功能==================================================
 
 
-search_card = on_command("查卡")
+search_card = on_command("查卡", aliases={"ck", "CK"})
 
 
 @search_card.handle()
