@@ -9,6 +9,7 @@ from nonebot.permission import SUPERUSER
 
 from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard, Card
 from nonebot_plugin_ocgbot_v2.libraries.Guess import Guess
+from nonebot_plugin_ocgbot_v2.libraries.charpic import charPic
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import *
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # 将父级目录加入执行目录列表
@@ -32,7 +33,7 @@ from nonebot_plugin_ocgbot_v2.libraries.guessManage import guessCardManager
 def is_now_guess(event: GroupMessageEvent) -> bool:
     groupSession = 'group_' + str(event.group_id)
     sessionId = 'user_' + str(event.sender.user_id)
-    return (groupSession + sessionId) in guess.Group
+    return (groupSession + sessionId) in guess.User
 
 
 cardUrl = pics_path
@@ -176,31 +177,20 @@ def verifySid(sid: str):
 
 @guessCard.handle()
 async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
-    # 根据会话类型生成sessionId
-    # sessionId = None
-    # groupSession = None
-    # 根据会话类型生成sessionId
-    # if isinstance(event, PrivateMessageEvent):
-    #     sessionId = 'user_' + str(event.user_id)
-    #     userType = 'private'
-    # if isinstance(event, GroupMessageEvent):
     groupSession = 'group_' + str(event.group_id)
     sessionId = 'user_' + str(event.sender.user_id)
     userType = 'group'
-    # 权限检查
     uid = groupSession + sessionId
-    if uid in guess.Group:
+    if uid in guess.User:
         await guessCard.finish()
+    # 权限检查
     try:
         userType = 'SU' if (str(event.user_id) in nonebot.get_driver().config.superusers) else userType
         gm.CheckPermission(sessionId, groupSession, userType)
     except PermissionError as e:
         await guessCard.finish(str(e))
-    # try:
     js = getRandomCard()
     card = js.cards[0]
-    # print(type(card))
-    # state['card'] = card
     pics_url = cardUrl + str(card.cardId) + ".jpg"
     try:
         image = Image.open(pics_url)
@@ -212,27 +202,21 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
     else:
         image = image.crop((52, 110, 348, 407))
     image = getGuessImg(image)
-    # state['time'] = TIME
-    # state['image'] = re_image
     gm.UpdateLastSend(sessionId)
     await guessCard.send([
         MessageSegment.at(user_id=event.sender.user_id),
         MessageSegment.text(text=get_named() + "臭欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
         MessageSegment.image(f"base64://{str(image_to_base64(image), encoding='utf-8')}")
     ])
-    uid = groupSession + sessionId
-    print(card.name)
     await guess.start(uid, card, image_to_base64(re_image))
     await asyncio.sleep(TIMEOUT)
-    if uid in guess.Group and not guess.Group[uid].end:
+    if uid in guess.User and not guess.User[uid].end:
         message=[
             MessageSegment.text(text=guess_timeout().format(card.name)),
-            MessageSegment.image(f"base64://{guess.Group[uid].image}")
+            MessageSegment.image(f"base64://{guess.User[uid].image}")
         ]
         guess.end(uid)
         await guessCard.finish(message, reply_message=True)
-    # except Exception as e:
-    #     await guessCard.finish("咿呀？启动失败了呢")
 
 
 @guessSolve.handle()
@@ -240,10 +224,10 @@ async def _(event: GroupMessageEvent):
     groupSession = 'group_' + str(event.group_id)
     sessionId = 'user_' + str(event.sender.user_id)
     uid = groupSession + sessionId
-    name = event.get_plaintext().strip()
-    card = guess.Group[uid].card
-    image = guess.Group[uid].image
-    time = guess.Group[uid].time
+    name = event.get_message().strip()
+    card = guess.User[uid].card
+    image = guess.User[uid].image
+    time = guess.User[uid].time
     if name == "不知道" or name == "跳过":
         message = [
             MessageSegment.at(user_id=event.sender.user_id),
@@ -285,7 +269,7 @@ async def _(event: GroupMessageEvent):
             await guessCard.reject([
                 MessageSegment.at(user_id=event.sender.user_id),
                 hint,
-                MessageSegment.text(text="\r\n还有{0}次机会！".format(guess.Group[uid].time))
+                MessageSegment.text(text="\r\n还有{0}次机会！".format(guess.User[uid].time))
             ])
     else:
         message = [
@@ -302,7 +286,7 @@ async def _(event: GroupMessageEvent):
     groupSession = 'group_' + str(event.group_id)
     sessionId = 'user_' + str(event.sender.user_id)
     uid = groupSession + sessionId
-    if uid in guess.Group:
+    if uid in guess.User:
         msg = '猜卡状态已重置'
         guess.end(uid)
         await guessReset.finish(msg, reply_message=True)
@@ -374,7 +358,7 @@ def isGuessWin(js, cardName, name) -> bool:
 
 
 # -----获取猜卡卡图 -----
-def getGuessImg(image: Image, restrict=2) -> Image:
+def getGuessImg(image: Image, restrict=3) -> Image:
     height, weight = image.size
     # 模糊处理
     if getRandom(restrict) == 1:
@@ -382,13 +366,16 @@ def getGuessImg(image: Image, restrict=2) -> Image:
         height, weight = image.size
         image = image.resize((height * RESIZE, weight * RESIZE))
     # 切割处理
-    else:
+    elif getRandom(restrict) == 2:
         sqrt = math.sqrt(CUTSIZE)
         beSqrt = CUTSIZE / sqrt
         cut = (sqrt, beSqrt) if getRandom(2) == 1 else (beSqrt, sqrt)
         cutHeight, cutWeight = int(image.size[0] / cut[0]), int(image.size[1] / cut[1])
         cutX, cutY = random.randint(cutHeight, height - cutHeight), random.randint(cutWeight, weight - cutWeight)
         image = image.crop((cutX, cutY, cutX + cutHeight, cutY + cutWeight))
+    # 字符画
+    else:
+        image = charPic(image)
     return image
 
 

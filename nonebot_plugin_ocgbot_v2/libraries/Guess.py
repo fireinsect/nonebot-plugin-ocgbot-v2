@@ -15,16 +15,16 @@ class GuessData(BaseModel):
 
 
 class Guess:
-    Group: Dict[str, GuessData] = {}
+    User: Dict[str, GuessData] = {}
 
     async def start(self, uid: str, card: Card, image: Image):
-        self.Group[uid] = await self.guessData(card, image)
+        self.User[uid] = await self.guessData(card, image)
 
     def end(self, uid: str):
-        del self.Group[uid]
+        del self.User[uid]
 
     async def time_minus(self, uid: str):
-        self.Group[uid].time -= 1
+        self.User[uid].time -= 1
 
     async def guessData(self, card: Card, image: Image) -> GuessData:
         return GuessData(**{
