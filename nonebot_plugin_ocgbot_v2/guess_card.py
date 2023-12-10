@@ -210,7 +210,7 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
     ])
     await guess.start(uid, card, image_to_base64(re_image))
     await asyncio.sleep(TIMEOUT)
-    if uid in guess.User and not guess.User[uid].end:
+    if uid in guess.User and not guess.User[uid].end and guess.User[uid].card.cardId==card.cardId:
         message=[
             MessageSegment.text(text=guess_timeout().format(card.name)),
             MessageSegment.image(f"base64://{guess.User[uid].image}")

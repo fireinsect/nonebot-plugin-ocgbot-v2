@@ -19,7 +19,7 @@ import nonebot_plugin_ocgbot_v2.priceSearch
 from .config import Config
 
 __plugin_meta__ = PluginMetadata(
-    name="nonbot-plugin-ocgbot-v2",
+    name="游戏王小蓝卡查",
     description="提供游戏王相关服务",
     usage="提供包括查卡、随机抽卡、猜卡等功能",
 
