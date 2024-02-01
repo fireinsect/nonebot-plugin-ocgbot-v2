@@ -6,7 +6,8 @@ from threading import Thread
 import httpx
 from nonebot import logger, get_driver
 from nonebot_plugin_ocgbot_v2.libraries.forbideGet import forbiddenGet
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, static_path_abso, deck_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, static_path_abso, deck_path, \
+    font_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import nick_name_0, nick_name_1, forbidden, daily_card
 from nonebot.plugin import PluginMetadata
 import nonebot_plugin_ocgbot_v2.data_update
@@ -32,7 +33,11 @@ __plugin_meta__ = PluginMetadata(
     supported_adapters={"~onebot.v11"},
 )
 
+from .libraries.FontUtil import font_init
+
 deck_url = "https://gitee.com/fireinsect/image-save/raw/master/decks/"
+font_url = "https://cdn.jsdelivr.net/gh/fireinsect/doc_save@0.1.0/fonts/"
+fonts = ["msyh.ttc", "qmzl.ttf"]
 
 
 class NetworkError(Exception):
@@ -49,23 +54,31 @@ async def download_url(url: str) -> bytes:
             except Exception as e:
                 logger.warning(f"Error downloading {url}, retry {i}/3: {e}")
                 await asyncio.sleep(1)
-    raise NetworkError(f"{url} 下载失败！")
+    raise NetworkError(f"{url} 下载失败！请重新运行或者自行前往下载")
 
 
-def saveImg(wj_path: str, img: bytes):
+def save(wj_path: str, img: bytes):
     with open(wj_path, "wb") as f:  # 文件写入
         f.write(img)
 
 
-async def download(wjs_path, wj, deck):
-    wj_path = wjs_path + "/" + wj
+async def download(base_url, folder_path, file_name):
+    file_path = folder_path + file_name
+    byte = await download_url(base_url + file_name)
+    save(file_path, byte)
+    logger.info(f"文件{file_name}下载成功")
+
+
+# 卡运专用
+async def download_img(files_path, file_name, deck):
+    wj_path = files_path + "/" + file_name
     if not os.path.exists(wj_path):
-        byte = await download_url(deck_url + "{0}/{1}".format(deck, wj))
-        saveImg(wj_path, byte)
-        logger.info("图片{0}下载成功".format(wj))
+        byte = await download_url(deck_url + f"{deck}/{file_name}")
+        save(wj_path, byte)
+        logger.info(f"图片{file_name}下载成功")
 
 
-def deckDownload():
+def deckDownloadInit():
     deck_json = deck_path + "deck_list.json"
     if not os.path.exists(deck_json):
         return
@@ -77,7 +90,15 @@ def deckDownload():
             logger.info("文件夹decks/" + deck + " 不存在，已经创建")
             os.mkdir(wjs_path)
         for wj in js['list'][deck]:
-            asyncio.run(download(wjs_path, wj, deck))
+            asyncio.run(download_img(wjs_path, wj, deck))
+
+
+def fontDownloadInit():
+    for font in fonts:
+        if not os.path.exists(font_path + font):
+            logger.info(f"字体文件{font}缺失，正在下载")
+            asyncio.run(download(font_url, font_path, font))
+    font_init()
 
 
 async def nickNameInit():
@@ -126,13 +147,19 @@ async def dailyInit():
         logger.warning(f'daily_card.json 读取失败')
 
 
+async def download_init():
+    thread01 = Thread(target=deckDownloadInit)
+    thread01.start()
+    thread02 = Thread(target=fontDownloadInit)
+    thread02.start()
+
+
 async def init():
     logger.info("开始初始化")
     if not os.path.exists(pics_path):
         logger.info("未发现图片文件夹，已经创建")
         os.mkdir(pics_path + "pics")
-    thread01 = Thread(target=deckDownload)
-    thread01.start()
+    await download_init()
     await nickNameInit()
     await forbideInit()
     await dailyInit()

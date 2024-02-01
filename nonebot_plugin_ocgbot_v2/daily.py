@@ -6,7 +6,8 @@ from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment
 from nonebot.typing import T_State
 
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import  image_path, font_path, deck_path
+from nonebot_plugin_ocgbot_v2.libraries.FontUtil import *
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import  image_path, deck_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import daily_card
 from nonebot_plugin_ocgbot_v2.libraries.tool import hash
 from nonebot_plugin_ocgbot_v2.libraries.image import image_to_base64
@@ -90,18 +91,6 @@ def getDailyText(point: int, wm_value):
 
 
 # ---图片拼接---
-# 通过不同path来指定字体
-font_path = font_path + "qmzl.ttf"
-# 星期显示字体
-fontWeek = ImageFont.truetype(font_path, 45)
-# 宜忌显示字体
-fontList = ImageFont.truetype(font_path, 30)
-# 卡牌信息字体
-fontCardStr = ImageFont.truetype(font_path, 40)
-# 小贴士字体
-fontText = ImageFont.truetype(font_path, 28)
-# 点数字体
-fontPoint = ImageFont.truetype(font_path, 60)
 
 
 def pic_joint(backPic: Image, cardPic: Image, daily: int, extra_text: str, weekday: int, card_str: str, proper_list,
