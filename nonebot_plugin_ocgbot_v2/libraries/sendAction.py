@@ -13,13 +13,15 @@ PANTOGRAPH = 0.6
 
 def getResult(car):
     result = ""
-    result += car.name + "\n" + car.type + "\nid-" + str(car.cardId) + " " + car.forbidden + "\n\n"
+    result += f"{car.name}\n{car.type}\nid-{str(car.cardId)} {car.forbidden}\n\n"
     car.effect = car.effect.replace('\r', '')
     if car.mainType == '怪兽':
         if car.deff is None:
-            result += car.level + ' / ' + car.zz + ' / ' + car.attribute + "\n" + 'ATK:' + car.atk + "\n\n"
+            result += f"{car.level} / {car.zz} / {car.attribute}\nATK:{car.atk}\n\n"
+            # result += car.level + ' / ' + car.zz + ' / ' + car.attribute + "\n" + 'ATK:' + car.atk + "\n\n"
         else:
-            result += car.level + ' / ' + car.zz + ' / ' + car.attribute + "\n" + 'ATK:' + car.atk + ' / DEF:' + car.deff + "\n\n"
+            result += f"{car.level} / {car.zz} / {car.attribute}\nATK:{car.atk} / DEF:{car.deff}\n\n"
+            # result += car.level + ' / ' + car.zz + ' / ' + car.attribute + "\n" + 'ATK:' + car.atk + ' / DEF:' + car.deff + "\n\n"
         # car['effect'] = re.sub(r"(.{50})", "\\1\n", car['effect'])
         result += car.effect
     else:
@@ -259,16 +261,16 @@ def img_exist(url):
 async def send_cards_byCard(js, func):
     result = ""
     for car in js.cards:
-        result += car.name + "     " + car.type + "    id-" + str(car.cardId) + "    " + car.forbidden + "\n"
+        result += f"{car.name}     {car.type}    id-{str(car.cardId)}    {car.forbidden}\n"
         # if car['enName'] is not None:
         #     result += "英文卡名-" + car['enName'] + "     " + "日文卡名-" + car['jpName'] + "\n"
         car.effect = car.effect.replace('\r', '')
         print(car.deff)
         if car.mainType == '怪兽':
             if car.deff is None:
-                result += car.level + ' / ATK: ' + car.atk + ' / : ' + car.zz + ' / ' + car.attribute + "\n"
+                result += f"{car.level} / ATK: {car.atk} / : {car.zz} / {car.attribute}\n"
             else:
-                result += car.level + ' / ATK: ' + car.atk + ' / DEF: ' + car.deff + ' / : ' + car.zz + ' / ' + car.attribute + "\n"
+                result += f"{car.level} / ATK: {car.atk} / DEF: {car.deff} / : {car.zz} / {car.attribute}\n"
             result += "效果：" + re.sub(r"(.{50})", "\\1\n", car.effect) + "\n"
             result += "\n"
             result += "\n"
@@ -277,9 +279,7 @@ async def send_cards_byCard(js, func):
             result += "\n"
             result += "\n"
 
-    page_text = str.format("找到了{0}张卡哟~,当前{1}/{2}页     输入数字可以选择搜索结果！输入`上一页`/`下一页` 进行翻页~", js.amount,
-                           js.nowNum,
-                           js.pageNum)
+    page_text = f"找到了{js.amount}张卡哟~,当前{js.nowNum}/{js.pageNum}页     输入数字可以选择搜索结果！输入`上一页`/`下一页` 进行翻页~"
     await func.send(Message([
         MessageSegment("image", {
             "file": f"base64://{str(image_to_base64(text_to_image2(result, page_text)), encoding='utf-8')}"

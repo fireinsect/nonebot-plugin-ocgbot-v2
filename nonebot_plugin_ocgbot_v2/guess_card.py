@@ -269,7 +269,7 @@ async def _(event: GroupMessageEvent):
             await guessCard.reject([
                 MessageSegment.at(user_id=event.sender.user_id),
                 hint,
-                MessageSegment.text(text="\r\n还有{0}次机会！".format(guess.User[uid].time))
+                MessageSegment.text(text=f"\r\n还有{guess.User[uid].time}次机会！")
             ])
     else:
         message = [

@@ -1,4 +1,3 @@
-
 import datetime
 
 from PIL import Image, ImageFont, ImageDraw
@@ -7,13 +6,14 @@ from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment
 from nonebot.typing import T_State
 
 from nonebot_plugin_ocgbot_v2.libraries.FontUtil import *
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import  image_path, deck_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import image_path, deck_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import daily_card
 from nonebot_plugin_ocgbot_v2.libraries.tool import hash
 from nonebot_plugin_ocgbot_v2.libraries.image import image_to_base64
 from nonebot_plugin_ocgbot_v2.libraries.sendAction import card_txt
 
-wm_list = ['同调', '仪式', '融合', '超量', '链接', '灵摆', '顶 G', '重坑', '干饭', '开壶', '唠嗑', '摸鱼', '说书', '开包', '懒觉', '锻炼', '口胡']
+wm_list = ['同调', '仪式', '融合', '超量', '链接', '灵摆', '顶 G', '重坑', '干饭', '开壶', '唠嗑', '摸鱼', '说书',
+           '开包', '懒觉', '锻炼', '口胡']
 dailycard = on_command('今日游戏王', aliases={'今日卡运', '今日牌运'})
 obj = daily_card
 lend = len(wm_list)
@@ -38,7 +38,7 @@ def getDailyPic(point: int, wm_value):
         back_pic = Image.open(image_path + "daily_xilie.png")
     else:
         back_pic = Image.open(image_path + "daily_kapai.png")
-    url = deck_path+f"{card['id']}/{card['id']}-{no}.jpg"
+    url = deck_path + f"{card['id']}/{card['id']}-{no}.jpg"
     cardPic = Image.open(url)
     proper_list = []
     envy_list = []

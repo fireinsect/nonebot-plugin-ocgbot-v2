@@ -1,6 +1,6 @@
 from PIL import ImageFont, ImageDraw, Image
 
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import static_path, image_path,font_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import image_path, font_path
 
 cardpath = image_path + "card.jpg"
 card2path = image_path + "card2.jpg"

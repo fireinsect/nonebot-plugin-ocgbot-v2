@@ -29,10 +29,9 @@ async def _(bot: Bot, event: Event, state: T_State,args: Message = CommandArg())
         page = search_group.groups()[2]
         textNext = search_group.groups()[0]
         name = textNext
-        url = gradeUrl + "&keyword={0}&page={1}".format(name, page)
+        url = f"{gradeUrl}&keyword={name}&page={page}"
         result = requests.get(url).json()
-        page_text = "找到了{0}条数据哟~,当前{1}/{2}页 数据来源：集换社".format(result['total'], result['current_page'],
-                                                             result['last_page'])
+        page_text = f"找到了{result['total']}条数据哟~,当前{result['current_page']}/{result['last_page']}页 数据来源：集换社"
 
         await priceSearch.send(Message([
             MessageSegment("image", {
@@ -46,6 +45,5 @@ async def _(bot: Bot, event: Event, state: T_State,args: Message = CommandArg())
 def getPriceStr(json):
     result = ""
     for item in json['data']:
-        result += "{0} {1}   {4}￥起 \n名称：{2} {3} \n\n".format(item['number'], item['rarity'], item['name_cn'],
-                                                             item['name_origin'], item['min_price'])
+        result += f"{item['number']} {item['rarity']}   {item['min_price']}￥起 \n名称：{item['name_cn']} {item['name_origin']} \n\n"
     return result
