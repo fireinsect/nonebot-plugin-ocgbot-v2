@@ -1,8 +1,6 @@
 from PIL.Image import Image
 from typing import Dict
-
 from pydantic import BaseModel
-
 from nonebot_plugin_ocgbot_v2.libraries.Card import Card
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import guess_diff
 

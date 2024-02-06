@@ -12,5 +12,5 @@ def hash(qq: int):
     return (days * qq) >> 8
 
 
-def getRandom(num: int) -> int :
-    return random.randint(1,num) % num
+def getRandom(num: int) -> int:
+    return random.randint(1, num) % num

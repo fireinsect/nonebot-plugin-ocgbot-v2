@@ -1,9 +1,6 @@
 import os
-import random
 import time
-
 from ..libraries.globalMessage import random_sendwitchoutcd
-
 try:
     import ujson as json
 except:
@@ -48,7 +45,7 @@ class RandomManager:
         except KeyError:
             return 0
 
-        # 查询cd
+    # 查询cd
     def ReadCd(self, group_sessionId):
         try:
             return self.cfg[group_sessionId]['cd']

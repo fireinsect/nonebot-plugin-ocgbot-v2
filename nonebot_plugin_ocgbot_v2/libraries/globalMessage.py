@@ -1,7 +1,6 @@
 import os.path
 import pathlib
 from random import choice
-
 import nonebot
 from nonebot import Config, logger
 

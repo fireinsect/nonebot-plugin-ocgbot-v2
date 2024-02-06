@@ -3,9 +3,7 @@ import json
 import math
 import os.path
 from typing import Optional, Dict
-
-import requests
-
+import httpx
 from nonebot_plugin_ocgbot_v2.libraries.SqliteUtils import SqliteUtils
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import cdb_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import forbidden, nick_name_0, nick_name_1
@@ -283,7 +281,7 @@ def sortCard(a):
 
 def searchFromBG(name):
     url = bg_url + name
-    response = requests.get(url)
+    response = httpx.get(url)
     js = json.loads(response.text)
     return js['result'][0]['id']
 

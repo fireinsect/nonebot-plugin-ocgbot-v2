@@ -1,5 +1,4 @@
 import os
-
 try:
     import ujson as json
 except:
@@ -46,8 +45,8 @@ class SearchManager:
 
     # --------------- 逻辑判断 开始 ---------------
     def CheckType(self, sessionId: str, userType: str = 'group'):
-        searchType=self.ReadSearchType(sessionId)
-        if searchType!=1 and searchType != 2 and searchType != 3:
+        searchType = self.ReadSearchType(sessionId)
+        if searchType != 1 and searchType != 2 and searchType != 3:
             raise PermissionError(f'查询失败！')
         else:
             return searchType
@@ -56,7 +55,7 @@ class SearchManager:
 
     # --------------- 增删系统 开始 ---------------
     def UpdateSearchType(self, sessionId: str, type: int):
-        if type != 1 and type != 2 and type!=3:
+        if type != 1 and type != 2 and type != 3:
             return "请选择正确查卡方式"
         else:
             if not sessionId in self.cfg.keys():

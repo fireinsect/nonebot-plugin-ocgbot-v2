@@ -1,5 +1,4 @@
 from PIL import ImageFont
-
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import font_path
 
 font = font_path + "qmzl.ttf"

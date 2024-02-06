@@ -1,6 +1,6 @@
 import datetime
 
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image, ImageDraw
 from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment
 from nonebot.typing import T_State

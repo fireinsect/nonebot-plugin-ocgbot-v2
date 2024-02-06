@@ -1,7 +1,7 @@
 import io
 
 import numpy
-import requests
+import httpx
 from PIL import Image, ImageFont, ImageDraw
 from matplotlib import pyplot as plt
 from matplotlib import font_manager as fm
@@ -23,7 +23,7 @@ font = font_path + "qmzl.ttf"
 
 @pieChartSearch.handle()
 async def test(bot: Bot, event: Event, state: T_State):
-    pie_date = requests.get(url).json()
+    pie_date = httpx.get(url).json()
     # global typee
     # if typee == 1:
     #     pie_date = json.loads(json1)

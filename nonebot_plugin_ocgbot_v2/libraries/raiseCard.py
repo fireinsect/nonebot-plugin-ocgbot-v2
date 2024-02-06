@@ -8,7 +8,7 @@ fontpath = font_path + "msyh.ttc"
 
 
 def draw_card_text(text, p):
-    if (p == 2):
+    if p == 2:
         i = Image.open(card2path)
     else:
         i = Image.open(cardpath)

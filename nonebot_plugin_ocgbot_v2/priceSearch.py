@@ -1,5 +1,5 @@
 import re
-import requests
+import httpx
 from nonebot.params import CommandArg
 from nonebot.typing import T_State
 from nonebot.adapters.onebot.v11 import Event, Bot, Message, MessageSegment
@@ -30,7 +30,7 @@ async def _(bot: Bot, event: Event, state: T_State,args: Message = CommandArg())
         textNext = search_group.groups()[0]
         name = textNext
         url = f"{gradeUrl}&keyword={name}&page={page}"
-        result = requests.get(url).json()
+        result = httpx.get(url).json()
         page_text = f"找到了{result['total']}条数据哟~,当前{result['current_page']}/{result['last_page']}页 数据来源：集换社"
 
         await priceSearch.send(Message([
