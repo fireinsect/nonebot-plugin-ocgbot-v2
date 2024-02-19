@@ -1,10 +1,12 @@
 import base64
 from io import BytesIO
-from PIL import ImageFont, ImageDraw, Image
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import font_path,image_path
+from pathlib import Path
 
-fontpath = font_path+"msyh.ttc"
-background = Image.open(image_path+"background.png")
+from PIL import ImageFont, ImageDraw, Image
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import font_path, image_path
+
+fontpath = str(Path(font_path) / "msyh.ttc")
+background = Image.open(Path(image_path) / "background.png")
 
 
 def draw_text(img_pil, text, offset_x):
@@ -46,7 +48,7 @@ def text_to_image2(text, page_text):
     padding = 30
     margin = 33
     text_list = text.split('\n')
-    max_width = 0
+    max_width = font.getsize(page_text)[0]
     for text in text_list:
         w, h = font.getsize(text)
         max_width = max(max_width, w)
@@ -68,7 +70,7 @@ def text_to_image2(text, page_text):
 
 def text_to_image_with_back(text, page_text, title):
     font = ImageFont.truetype(fontpath, 28)
-    font_title = ImageFont.truetype(font_path+"qmzl.ttf", 50)
+    font_title = ImageFont.truetype(str(Path(font_path) / "qmzl.ttf"), 50)
     font_page = ImageFont.truetype(fontpath, 30)
     padding = 30
     margin = 33

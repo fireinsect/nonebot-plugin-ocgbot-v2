@@ -1,5 +1,4 @@
-import os.path
-import pathlib
+from pathlib import Path
 from random import choice
 import nonebot
 from nonebot import Config, logger
@@ -85,8 +84,19 @@ message_type = [
                 "答错...好吧,##竟然答对了{0}(生气)",
                 "呐❤呐❤呐❤，##竟然答对了{0},##不会作弊了吧❤~"
             ],
+        },
+        'random': {
+            'sendwitchoutcd': [
+                "##！慢点啦！",
+                "前面的区域之后再来探索吧~",
+                "##又在抽卡哦~休息一下好不好~",
+                "##小蓝不让你抽卡了(叉腰)~",
+                "抽多了对身体不好❤~##受不了的~",
+                "##又在抽卡呀，天天只会抽卡，真是飞舞❤～",
+                "##，着什么急❤～笨蛋❤笨蛋",
+                "##，不给你抽了！生气了吗？嘻嘻❤～"
+            ]
         }
-
     },
 
     {
@@ -138,21 +148,25 @@ message_type = [
                 "好耶,##答对了{0}！小蓝可以去洗衣服啦",
                 "嘿嘿嘿，##好厉害，小蓝都不会呢，答案就是{0}哦"
             ],
+        },
+        'random': {
+            'sendwitchoutcd': [
+                "##！慢点啦！",
+                "前面的区域之后再来探索吧~",
+                "##又在抽卡哦~休息一下好不好~",
+                "##小蓝不让你抽卡了(叉腰)~",
+                "抽多了对身体不好,##受不了的啦",
+                "##，不要着急啦",
+                "##，不给你抽了啦！"
+            ]
         }
-
     },
 ]
 
-random_sendwitchoutcd = [
-    "臭欧尼酱！慢点啦！",
-    "前面的区域之后再来探索吧~",
-    "臭欧尼酱又在抽卡哦~休息一下好不好~",
-    "臭欧尼酱小蓝不让你抽卡了(叉腰)~",
-    "抽多了对身体不好❤️~臭哥哥受不了的~",
-    "杂鱼又在抽卡呀，天天只会抽卡，真是飞舞❤️～",
-    "笨蛋大叔，着什么急❤️～笨蛋❤️笨蛋",
-    "臭大叔，不给你抽了！生气了吗？嘻嘻❤️～"
-]
+
+def random_sendwitchoutcd() -> str:
+    arr = message_type[mess_type_choose]['random']['sendwitchoutcd']
+    return choice(arr).replace("##", get_named())
 
 
 def guess_sendwitchoutcd() -> str:
@@ -224,40 +238,40 @@ guess_diff = [
         'timeout': 100
     }
 ]
-static_path_abso = str(pathlib.Path(__file__).parent.parent).replace("\\", "/") + "/static/"
-json_path = static_path_abso + "json/"
-font_path = static_path_abso + "fonts/"
-cdb_path = static_path_abso + "cdb/"
-image_path = static_path_abso + "images/"
-pics_path = static_path_abso + "pics/"
-deck_path = static_path_abso + "decks/"
+static_path_abso = Path(__file__).parent.parent / "static"
+paths = {}
+json_path = str(static_path_abso / "json")
+font_path = str(static_path_abso / "fonts")
+cdb_path = str(static_path_abso / "cdb")
+image_path = str(static_path_abso / "images")
+pics_path = str(static_path_abso / "pics")
+deck_path = str(static_path_abso / "decks")
 logger.info("静态文件路径检查中......")
 try:
-    static_path_config = str(Config.parse_obj(nonebot.get_driver().config).static_path)
+    static_path_config = Path(Config.parse_obj(nonebot.get_driver().config).static_path)
     logger.info(static_path_config)
-    if not (static_path_config.endswith("/") or static_path_config.endswith("\\")):
-        static_path_config = static_path_config + "/"
-    if not os.path.exists(static_path_config):
+    # if not (static_path_config.endswith("/") or static_path_config.endswith("\\")):
+    #     static_path_config = static_path_config + "/"
+    if not static_path_config.exists():
         logger.info("环境路径不存在.....")
     else:
-        if os.path.exists(static_path_config + "json/"):
-            json_path = static_path_config + "json/"
+        if (static_path_config / "json").exists():
+            json_path = str(static_path_config / "json")
             logger.info("环境路径存在json文件夹，已使用")
-        if os.path.exists(static_path_config + "fonts/"):
-            font_path = static_path_config + "fonts/"
+        if (static_path_config / "fonts").exists():
+            font_path = str(static_path_config / "fonts")
             logger.info("环境路径存在fonts文件夹，已使用")
-        if os.path.exists(static_path_config + "cdb/"):
-            cbd_path = static_path_config + "cdb/"
+        if (static_path_config / "cdb/").exists():
+            cbd_path = str(static_path_config / "cdb/")
             logger.info("环境路径存在cdb文件夹，已使用")
-        if os.path.exists(static_path_config + "images/"):
-            image_path = static_path_config + "images/"
+        if (static_path_config / "images/").exists():
+            image_path = str(static_path_config / "images/")
             logger.info("环境路径存在images文件夹，已使用")
-        if os.path.exists(static_path_config + "pics/"):
-            pics_path = static_path_config + "pics/"
-            logger.info(pics_path)
+        if (static_path_config / "pics/").exists():
+            pics_path = str(static_path_config / "pics/")
             logger.info("环境路径存在pics文件夹，已使用")
-        if os.path.exists(static_path_config + "decks/"):
-            deck_path = static_path_config + "decks/"
+        if (static_path_config / "decks/").exists():
+            deck_path = str(static_path_config / "decks/")
             logger.info("环境路径存在deck文件夹，已使用")
 except:
     logger.info("不存在环境路径，使用本地路径....")

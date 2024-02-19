@@ -1,4 +1,6 @@
 import json
+from pathlib import Path
+
 from requests_html import HTMLSession
 from nonebot_plugin_ocgbot_v2.libraries.SqliteUtils import SqliteUtils
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, cdb_path
@@ -17,7 +19,7 @@ rests = []
 # 准限制卡cid
 pres = []
 sqlite = SqliteUtils()
-conn, cursor = sqlite.connect(cdb_path + "cards.cdb")
+conn, cursor = sqlite.connect(Path(cdb_path) / "cards.cdb")
 
 
 def cidGet():
@@ -51,7 +53,7 @@ def insert(card_id, name, status):
 
 def WriteForbidden(js):
     # 写入数据
-    with open(json_path + "forbidden.json", 'w', encoding='utf-8') as f:
+    with open(Path(json_path) / "forbidden.json", 'w', encoding='utf-8') as f:
         f.write(json.dumps(js, ensure_ascii=False, indent=4))
 
 

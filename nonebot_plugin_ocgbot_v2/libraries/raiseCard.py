@@ -1,10 +1,12 @@
+from pathlib import Path
+
 from PIL import ImageFont, ImageDraw, Image
 
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import image_path, font_path
 
-cardpath = image_path + "card.jpg"
-card2path = image_path + "card2.jpg"
-fontpath = font_path + "msyh.ttc"
+cardpath = Path(image_path) / "card.jpg"
+card2path = Path(image_path) / "card2.jpg"
+fontpath = Path(font_path) / "msyh.ttc"
 
 
 def draw_card_text(text, p):

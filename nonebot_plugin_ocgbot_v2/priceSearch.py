@@ -5,7 +5,7 @@ from nonebot.typing import T_State
 from nonebot.adapters.onebot.v11 import Event, Bot, Message, MessageSegment
 from nonebot import on_command
 
-from nonebot_plugin_ocgbot_v2.libraries.image import image_to_base64, text_to_image2, text_to_image_with_back
+from nonebot_plugin_ocgbot_v2.libraries.image import image_to_base64, text_to_image_with_back
 
 gradeUrl = "https://api.jihuanshe.com/api/market/search/match-product?game_key=ygo&game_sub_key=ocg&type=card_version"
 

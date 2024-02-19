@@ -1,9 +1,6 @@
 import os
-import random
 import time
-from pathlib import Path
 
-import nonebot
 from nonebot.log import logger
 
 from ..libraries.globalMessage import guess_sendwitchoutcd

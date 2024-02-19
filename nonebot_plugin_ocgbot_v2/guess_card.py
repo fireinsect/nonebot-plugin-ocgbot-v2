@@ -7,7 +7,7 @@ from pathlib import Path
 from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 
-from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard, Card
+from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard
 from nonebot_plugin_ocgbot_v2.libraries.Guess import Guess
 from nonebot_plugin_ocgbot_v2.libraries.charpic import charPic
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import *

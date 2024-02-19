@@ -1,11 +1,12 @@
 import datetime
+from pathlib import Path
 
 from PIL import Image, ImageDraw
 from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, MessageSegment
 from nonebot.typing import T_State
 
-from nonebot_plugin_ocgbot_v2.libraries.FontUtil import *
+from nonebot_plugin_ocgbot_v2.libraries.FontUtil import fonts
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import image_path, deck_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import daily_card
 from nonebot_plugin_ocgbot_v2.libraries.tool import hash
@@ -35,10 +36,10 @@ def getDailyPic(point: int, wm_value):
     card = obj[point % len(obj)]
     no = point % int(card['nums'])
     if card['type'] == "系列":
-        back_pic = Image.open(image_path + "daily_xilie.png")
+        back_pic = Image.open(Path(image_path) / "daily_xilie.png")
     else:
-        back_pic = Image.open(image_path + "daily_kapai.png")
-    url = deck_path + f"{card['id']}/{card['id']}-{no}.jpg"
+        back_pic = Image.open(Path(image_path) / "daily_kapai.png")
+    url = Path(deck_path) / f"{card['id']}/{card['id']}-{no}.jpg"
     cardPic = Image.open(url)
     proper_list = []
     envy_list = []
@@ -100,25 +101,25 @@ def pic_joint(backPic: Image, cardPic: Image, daily: int, extra_text: str, weekd
     week = f"星期{num_dict.get(str(weekday))}"
     # 文字写入通过不同fill指定颜色
     # 写入星期
-    draw.text((550, 50), week, font=fontWeek, fill=(92, 128, 160))
+    draw.text((550, 50), week, font=fonts['fontWeek'], fill=(92, 128, 160))
     # 写入宜忌
     for i in range(len(proper_list)):
         if i > 5:
             break
         else:
-            draw.text((60 + i % 3 * 102, 325 + int(i / 3) * 40), proper_list[i], font=fontList, fill=(92, 128, 160))
+            draw.text((60 + i % 3 * 102, 325 + int(i / 3) * 40), proper_list[i], font=fonts['fontList'], fill=(92, 128, 160))
     for i in range(len(envy_list)):
         if i > 5:
             break
         else:
-            draw.text((60 + i % 3 * 102, 507 + int(i / 3) * 40), envy_list[i], font=fontList, fill=(92, 128, 160))
+            draw.text((60 + i % 3 * 102, 507 + int(i / 3) * 40), envy_list[i], font=fonts['fontList'], fill=(92, 128, 160))
     # 写入小贴士
-    draw.text(((backPic.width - fontText.size * len(extra_text)) / 2, 690), extra_text, font=fontText,
+    draw.text(((backPic.width - fonts['fontText'].size * len(extra_text)) / 2, 690), extra_text, font=fonts['fontText'],
               fill=(92, 128, 160))
     # 贴入卡图
     backPic.paste(cardPic.resize((280, 280)), (460, 290))
     # 写入卡牌信息
-    draw.text((430 + (400 - fontCardStr.size * len(card_str)) / 2, 580), card_str, font=fontCardStr,
+    draw.text((430 + (400 - fonts['fontCardStr'].size * len(card_str)) / 2, 580), card_str, font=fonts['fontCardStr'],
               fill=(92, 128, 160))
     # 写入点数
-    draw.text((260, 200), str(daily), font=fontPoint, fill=(92, 128, 160))
+    draw.text((260, 200), str(daily), font=fonts['fontPoint'], fill=(92, 128, 160))

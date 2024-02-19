@@ -1,12 +1,12 @@
 import asyncio
 import json
 import os.path
+from pathlib import Path
 from threading import Thread
 import httpx
 from nonebot import logger, get_driver
 from nonebot_plugin_ocgbot_v2.libraries.forbideGet import forbiddenGet
-from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, static_path_abso, deck_path, \
-    font_path
+from nonebot_plugin_ocgbot_v2.libraries.globalMessage import json_path, pics_path, deck_path, font_path
 from nonebot_plugin_ocgbot_v2.libraries.staticvar import nick_name_0, nick_name_1, forbidden, daily_card
 from nonebot.plugin import PluginMetadata
 import nonebot_plugin_ocgbot_v2.data_update
@@ -62,7 +62,7 @@ def save(wj_path: str, img: bytes):
 
 
 async def download(base_url, folder_path, file_name):
-    file_path = folder_path + file_name
+    file_path = folder_path / file_name
     byte = await download_url(base_url + file_name)
     save(file_path, byte)
     logger.info(f"文件{file_name}下载成功")
@@ -70,38 +70,39 @@ async def download(base_url, folder_path, file_name):
 
 # 卡运专用
 async def download_img(files_path, file_name, deck):
-    wj_path = files_path + "/" + file_name
-    if not os.path.exists(wj_path):
+    wj_path = files_path / file_name
+    if not wj_path.exists():
         byte = await download_url(deck_url + f"{deck}/{file_name}")
         save(wj_path, byte)
         logger.info(f"图片{file_name}下载成功")
 
 
 def deckDownloadInit():
-    deck_json = deck_path + "deck_list.json"
-    if not os.path.exists(deck_json):
+    deck_json = Path(deck_path) / "deck_list.json"
+    if not deck_json.exists():
         return
     with open(deck_json, 'r', encoding='utf-8') as f:
         js = json.loads(f.read())
     for deck in js['list']:
-        wjs_path = deck_path + deck
-        if not os.path.exists(wjs_path):
+        wjs_path = Path(deck_path) / deck
+        if not wjs_path.exists():
             logger.info("文件夹decks/" + deck + " 不存在，已经创建")
-            os.mkdir(wjs_path)
+            wjs_path.mkdir(parents=True, exist_ok=True)
         for wj in js['list'][deck]:
             asyncio.run(download_img(wjs_path, wj, deck))
 
 
 def fontDownloadInit():
     for font in fonts:
-        if not os.path.exists(font_path + font):
+        if not (Path(font_path) / font).exists():
             logger.info(f"字体文件{font}缺失，正在下载")
-            asyncio.run(download(font_url, font_path, font))
+            asyncio.run(download(font_url, Path(font_path), font))
     font_init()
+    logger.info(f"字体初始化完成")
 
 
 async def nickNameInit():
-    nick_path = json_path + "nickname.json"
+    nick_path = Path(json_path) / "nickname.json"
     try:
         # 尝试读取
         with open(nick_path, 'r', encoding='utf-8') as f:
@@ -118,7 +119,7 @@ async def nickNameInit():
 
 
 async def forbideInit():
-    forbide_path = json_path + "forbidden.json"
+    forbide_path = Path(json_path) / "forbidden.json"
     try:
         # 尝试读取
         with open(forbide_path, 'r', encoding='utf-8') as f:
@@ -133,7 +134,7 @@ async def forbideInit():
 
 
 async def dailyInit():
-    nick_path = json_path + "daily_card.json"
+    nick_path = Path(json_path) / "daily_card.json"
     try:
         # 尝试读取
         with open(nick_path, 'r', encoding='utf-8') as f:
@@ -155,9 +156,9 @@ async def download_init():
 
 async def init():
     logger.info("开始初始化")
-    if not os.path.exists(pics_path):
+    if not Path(pics_path).exists():
         logger.info("未发现图片文件夹，已经创建")
-        os.mkdir(pics_path + "pics")
+        (Path(pics_path) / "pics").mkdir(parents=True, exist_ok=True)
     await download_init()
     await nickNameInit()
     await forbideInit()

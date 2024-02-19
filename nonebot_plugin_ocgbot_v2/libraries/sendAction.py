@@ -1,4 +1,3 @@
-import os.path
 import random
 import re
 from nonebot.adapters.onebot.v11 import Message, MessageSegment
@@ -6,7 +5,7 @@ from nonebot_plugin_ocgbot_v2.libraries.Card import CardResult
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import noSearchText, lanName, pics_path
 from nonebot_plugin_ocgbot_v2.libraries.image import *
 
-static_url = pics_path
+static_url = Path(pics_path)
 # 缩放比例
 PANTOGRAPH = 0.6
 
@@ -59,12 +58,12 @@ async def send(js, bot, event, func, num=0):
         sendNosearch(func)
     else:
         msg_list = []
-        pics_url = static_url + str(
-            js.cards[0].cardId) + '.jpg'
+        pics_url = static_url / (str(
+            js.cards[0].cardId) + '.jpg')
         if num != 0:
             num = num - 1
-            pics_url = static_url + str(
-                js.cards[num].cardId) + '.jpg'
+            pics_url = static_url / (str(
+                js.cards[num].cardId) + '.jpg')
             if img_exist(pics_url):
                 messageListAppend(js, pics_url, num, msg_list)
             else:
@@ -96,15 +95,15 @@ async def send(js, bot, event, func, num=0):
 
 # 出现完整效果的方式
 async def send2(js, func, num=0):
-    pics_url = static_url + str(
-        js.cards[0].cardId) + '.jpg'
+    pics_url = static_url / (str(
+        js.cards[0].cardId) + '.jpg')
     if js.amount == 0:
         sendNosearch(func)
     # num!=0即用户选择详细卡牌信息
     elif num != 0:
         num = num - 1
-        pics_url = static_url + str(
-            js.cards[num].cardId) + '.jpg'
+        pics_url = static_url / (str(
+            js.cards[num].cardId) + '.jpg')
         if img_exist(pics_url):
             await func.finish(getAllMessage(js, pics_url, num))
         else:
@@ -122,15 +121,15 @@ async def send2(js, func, num=0):
 
 # 单卡图方式
 async def send3(js, func, num=0):
-    pics_url = static_url + str(
-        js.cards[0].cardId) + '.jpg'
+    pics_url = static_url / (str(
+        js.cards[0].cardId) + '.jpg')
     if js.amount == 0:
         sendNosearch(func)
     # num!=0即用户选择详细卡牌信息
     elif num != 0:
         num = num - 1
-        pics_url = static_url + str(
-            js.cards[num - 1].cardId) + '.jpg'
+        pics_url = static_url / (str(
+            js.cards[num - 1].cardId) + '.jpg')
         if img_exist(pics_url):
             await func.finish(getPicOnlyMessage(js, num, pics_url))
         else:
@@ -252,7 +251,7 @@ def getPicOnlyMessage(js, num, url):
 # =========判断============
 # 判断图片是否存在
 def img_exist(url):
-    return os.path.exists(url)
+    return url.exists()
 
 
 # =====================
@@ -265,7 +264,6 @@ async def send_cards_byCard(js, func):
         # if car['enName'] is not None:
         #     result += "英文卡名-" + car['enName'] + "     " + "日文卡名-" + car['jpName'] + "\n"
         car.effect = car.effect.replace('\r', '')
-        print(car.deff)
         if car.mainType == '怪兽':
             if car.deff is None:
                 result += f"{car.level} / ATK: {car.atk} / : {car.zz} / {car.attribute}\n"
@@ -280,7 +278,13 @@ async def send_cards_byCard(js, func):
             result += "\n"
 
     page_text = f"找到了{js.amount}张卡哟~,当前{js.nowNum}/{js.pageNum}页     输入数字可以选择搜索结果！输入`上一页`/`下一页` 进行翻页~"
-    await func.send(Message([
-        MessageSegment("image", {
-            "file": f"base64://{str(image_to_base64(text_to_image2(result, page_text)), encoding='utf-8')}"
-        })]))
+    if js.amount > 1:
+        await func.send(Message([
+            MessageSegment("image", {
+                "file": f"base64://{str(image_to_base64(text_to_image2(result, page_text)), encoding='utf-8')}"
+            })]))
+    else:
+        await func.finish(Message([
+            MessageSegment("image", {
+                "file": f"base64://{str(image_to_base64(text_to_image2(result, page_text)), encoding='utf-8')}"
+            })]))

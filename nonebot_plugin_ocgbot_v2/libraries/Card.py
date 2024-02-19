@@ -1,7 +1,7 @@
 import copy
 import json
 import math
-import os.path
+from pathlib import Path
 from typing import Optional, Dict
 import httpx
 from nonebot_plugin_ocgbot_v2.libraries.SqliteUtils import SqliteUtils
@@ -12,14 +12,14 @@ sqlite = SqliteUtils()
 
 pre_flag = 0
 extra_flag = 0
-conn, cursor = sqlite.connect(cdb_path + "cards.cdb")
+conn, cursor = sqlite.connect(Path(cdb_path) / "cards.cdb")
 
-if os.path.exists(cdb_path + "pre-release.cdb"):
-    conn_pre, cursor_pre = sqlite.connect(cdb_path + "pre-release.cdb")
+if (Path(cdb_path) / "pre-release.cdb").exists():
+    conn_pre, cursor_pre = sqlite.connect(Path(cdb_path) / "pre-release.cdb")
     pre_flag = 1
 
-if os.path.exists(cdb_path + "extra_card.cdb"):
-    conn_extra, cursor_extra = sqlite.connect(cdb_path + "extra_card.cdb")
+if (Path(cdb_path) / "extra_card.cdb").exists():
+    conn_extra, cursor_extra = sqlite.connect(Path(cdb_path) / "extra_card.cdb")
     extra_flag = 1
 
 typeList = ['怪兽', '魔法', '陷阱']
@@ -72,6 +72,7 @@ class Card_Extra(Dict):
                 return self['def']
             return self[item]
         return super().__getattribute__(item)
+
 
 class Card(Dict):
     cardId: Optional[int] = None
@@ -252,7 +253,9 @@ def searchByName(name: str):
             card = Card_Extra(row)
             cards.append(card)
     if len(cards) == 0:
-        cards = searchById(searchFromBG(org_name))
+        bg_temp = searchFromBG(org_name)
+        if bg_temp is not None:
+            cards = searchById()
     cards.sort(key=sortCard)
     return cards
 
@@ -283,7 +286,10 @@ def searchFromBG(name):
     url = bg_url + name
     response = httpx.get(url)
     js = json.loads(response.text)
-    return js['result'][0]['id']
+    if len(js["result"]) == 0:
+        return None
+    else:
+        return js['result'][0]['id']
 
 
 def nickNameMatch(name: str):

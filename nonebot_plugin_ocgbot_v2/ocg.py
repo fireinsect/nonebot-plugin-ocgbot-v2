@@ -52,12 +52,12 @@ async def _(bot: Bot, event: Event, state: T_State, args: Message = CommandArg()
     except:
         text = text + " 1"
         search_group = re.match(regex, text).groups()
-    try:
-        state['name'] = search_group[0]
-        state['page'] = search_group[1]
-        js = getCard(state['name'], state['page'])
-    except Exception as e:
-        await search_card.finish("咿呀？查询失败了呢")
+    # try:
+    state['name'] = search_group[0]
+    state['page'] = search_group[1]
+    js = getCard(state['name'], state['page'])
+    # except Exception as e:
+    #     await search_card.finish("咿呀？查询失败了呢")
     if int(search_group[1]) > int(js.pageNum):
         await search_card.finish("页码超出最大值" + "`" + str(js.pageNum) + "`")
     state['js'] = js
