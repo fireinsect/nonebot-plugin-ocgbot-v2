@@ -18,7 +18,7 @@ _✨ 提供游戏王相关服务 ✨_
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-ocgbot-v2.svg" alt="pypi">
 </a>
 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=OnxogWkEfZzHD2WTSQgHQieOMPD-UcYy&authKey=uSMDzyO1Or7Q5MNev8hA0OH%2BDPUSLciAkHjC%2BgoflknrM0xidMm6li%2F76%2F0e95Kr&noverify=0&group_code=328864342">
-     <img src="https://img.shields.io/badge/QQ%E7%BE%A4-144718588-orange?style=flat-square" alt="QQ Chat Group">
+     <img src="https://img.shields.io/badge/QQ%E7%BE%A4-328864342-orange?style=flat-square" alt="QQ Chat Group">
 </a>
 <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
 
