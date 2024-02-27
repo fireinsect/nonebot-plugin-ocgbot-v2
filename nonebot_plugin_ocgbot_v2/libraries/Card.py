@@ -255,7 +255,7 @@ def searchByName(name: str):
     if len(cards) == 0:
         bg_temp = searchFromBG(org_name)
         if bg_temp is not None:
-            cards = searchById()
+            cards = searchById(bg_temp)
     cards.sort(key=sortCard)
     return cards
 

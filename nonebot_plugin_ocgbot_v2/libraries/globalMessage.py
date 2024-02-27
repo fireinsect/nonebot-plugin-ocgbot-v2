@@ -261,17 +261,17 @@ try:
         if (static_path_config / "fonts").exists():
             font_path = str(static_path_config / "fonts")
             logger.info("环境路径存在fonts文件夹，已使用")
-        if (static_path_config / "cdb/").exists():
-            cbd_path = str(static_path_config / "cdb/")
+        if (static_path_config / "cdb").exists():
+            cdb_path = str(static_path_config / "cdb")
             logger.info("环境路径存在cdb文件夹，已使用")
-        if (static_path_config / "images/").exists():
-            image_path = str(static_path_config / "images/")
+        if (static_path_config / "images").exists():
+            image_path = str(static_path_config / "images")
             logger.info("环境路径存在images文件夹，已使用")
-        if (static_path_config / "pics/").exists():
-            pics_path = str(static_path_config / "pics/")
+        if (static_path_config / "pics").exists():
+            pics_path = str(static_path_config / "pics")
             logger.info("环境路径存在pics文件夹，已使用")
-        if (static_path_config / "decks/").exists():
-            deck_path = str(static_path_config / "decks/")
+        if (static_path_config / "decks").exists():
+            deck_path = str(static_path_config / "decks")
             logger.info("环境路径存在deck文件夹，已使用")
 except:
     logger.info("不存在环境路径，使用本地路径....")
