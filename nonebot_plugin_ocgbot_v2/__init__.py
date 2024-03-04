@@ -35,7 +35,7 @@ __plugin_meta__ = PluginMetadata(
 from .libraries.FontUtil import font_init
 
 deck_url = "https://gitee.com/fireinsect/image-save/raw/master/decks/"
-font_url = "https://cdn.jsdelivr.net/gh/fireinsect/doc_save@0.1.0/fonts/"
+font_url = "https://fastly.jsdelivr.net/gh/fireinsect/doc_save@0.1.0/fonts/"
 fonts = ["msyh.ttc", "qmzl.ttf"]
 
 
@@ -93,6 +93,8 @@ def deckDownloadInit():
 
 
 def fontDownloadInit():
+    if not Path(font_path).exists():
+        Path(font_path).mkdir(parents=True, exist_ok=True)
     for font in fonts:
         if not (Path(font_path) / font).exists():
             logger.info(f"字体文件{font}缺失，正在下载")
