@@ -40,7 +40,7 @@ class guessCardManager:
     # 写入cfg
     def WriteCfg(self):
         # 尝试创建路径
-        os.makedirs(self.path[:-18], mode=0o777, exist_ok=True)
+        os.makedirs(self.path.rsplit("/",1)[0], mode=0o777, exist_ok=True)
         # 写入数据
         with open(self.path, 'w', encoding='utf-8') as f:
             f.write(json.dumps(self.cfg))

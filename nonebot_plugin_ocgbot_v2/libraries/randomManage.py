@@ -1,6 +1,7 @@
 import os
 import time
 from ..libraries.globalMessage import random_sendwitchoutcd
+
 try:
     import ujson as json
 except:
@@ -30,7 +31,7 @@ class RandomManager:
 
     def WriteCfg(self):
         # 尝试创建路径
-        os.makedirs(self.path[:-16], mode=0o777, exist_ok=True)
+        os.makedirs(self.path.rsplit("/", 1)[0], mode=0o777, exist_ok=True)
         # 写入数据
         with open(self.path, 'w', encoding='utf-8') as f:
             f.write(json.dumps(self.cfg))
@@ -51,6 +52,7 @@ class RandomManager:
             return self.cfg[group_sessionId]['cd']
         except KeyError:
             return self.random_cd
+
     # 查询黑名单
     def ReadBanList(self, sessionId):
         try:
@@ -61,7 +63,7 @@ class RandomManager:
     # --------------- 查询系统 结束 ---------------
 
     # --------------- 逻辑判断 开始 ---------------
-    def CheckPermission(self, sessionId: str,groupSession: str, userType: str = 'group'):
+    def CheckPermission(self, sessionId: str, groupSession: str, userType: str = 'group'):
         if self.ReadBanList(groupSession):
             raise PermissionError(f'抽卡功能已关闭！')
         # 查询冷却时间
@@ -76,8 +78,9 @@ class RandomManager:
                 hours, minutes = divmod(minutes, 60)
             else:
                 seconds = timeLeft
-            cd_msg = f"{str(round(hours)) + '小时' if hours else ''}{str(round(minutes)) + '分钟' if minutes else ''}{str(round(seconds,3)) + '秒' if seconds else ''}"
+            cd_msg = f"{str(round(hours)) + '小时' if hours else ''}{str(round(minutes)) + '分钟' if minutes else ''}{str(round(seconds, 3)) + '秒' if seconds else ''}"
             raise PermissionError(f"{random_sendwitchoutcd()} 你的CD还有{cd_msg}！")
+
     # --------------- 逻辑判断 结束 ---------------
 
     # --------------- 冷却更新 开始 ---------------

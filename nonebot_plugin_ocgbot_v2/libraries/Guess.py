@@ -5,11 +5,14 @@ from nonebot_plugin_ocgbot_v2.libraries.Card import Card
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import guess_diff
 
 
+
 class GuessData(BaseModel):
     card: Card
     image: str
     time: int
     end: bool = False
+    class Config:
+        arbitrary_types_allowed = True
 
 
 class Guess:
