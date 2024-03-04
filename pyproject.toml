@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-ocgbot-v2"
-version = "0.2.9.2"
+version = "0.2.9.3"
 description = "nonebot-plugin-ocgbot-v2"
 authors = ["fireinsect <847954981@qq.com>"]
 readme = "README.md"
