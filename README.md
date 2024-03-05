@@ -159,10 +159,10 @@ _✨ 提供游戏王相关服务 ✨_
 <details>
     <summary><b>随机猜卡</b></summary>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/caik.png">
-</details><details>
+</details>
+<details>
     <summary><b>查询卡价</b></summary>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/jg.png">
-
 </details>
 <details>
     <summary><b>帮助菜单</b></summary>
@@ -179,6 +179,9 @@ _✨ 提供游戏王相关服务 ✨_
     <hr/>        
     <h3>方式3</h3>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/change3.png">
-
 </details>
 
+## 💰 赞助
+感谢大家的赞助！你们的赞助将是我继续创作的动力！
+#### 火属性小虫
+- [爱发电](https://afdian.net/a/ocg-bot)
