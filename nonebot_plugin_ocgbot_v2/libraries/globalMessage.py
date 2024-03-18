@@ -1,7 +1,8 @@
 from pathlib import Path
 from random import choice
-import nonebot
-from nonebot import Config, logger
+from nonebot import logger
+
+from ..config import config
 
 noSearchText = [
     "没找到捏~ 欧尼酱~",
@@ -248,7 +249,7 @@ pics_path = str(static_path_abso / "pics")
 deck_path = str(static_path_abso / "decks")
 logger.info("静态文件路径检查中......")
 try:
-    static_path_config = Path(Config.parse_obj(nonebot.get_driver().config).static_path)
+    static_path_config = Path(config.static_path)
     logger.info(static_path_config)
     # if not (static_path_config.endswith("/") or static_path_config.endswith("\\")):
     #     static_path_config = static_path_config + "/"

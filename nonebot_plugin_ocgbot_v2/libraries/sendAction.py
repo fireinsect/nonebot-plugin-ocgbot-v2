@@ -1,6 +1,9 @@
 import random
 import re
+import httpx
 from nonebot.adapters.onebot.v11 import Message, MessageSegment
+
+from ..config import config
 from nonebot_plugin_ocgbot_v2.libraries.Card import CardResult
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import noSearchText, lanName, pics_path
 from nonebot_plugin_ocgbot_v2.libraries.image import *
@@ -8,6 +11,10 @@ from nonebot_plugin_ocgbot_v2.libraries.image import *
 static_url = Path(pics_path)
 # 缩放比例
 PANTOGRAPH = 0.6
+
+baige_url = 'https://cdn.233.momobako.com/ygopro/pics/'
+
+useWebPic: bool = config.use_web_pic
 
 
 def getResult(car):
@@ -251,7 +258,10 @@ def getPicOnlyMessage(js, num, url):
 # =========判断============
 # 判断图片是否存在
 def img_exist(url):
-    return url.exists()
+    if url.exists():
+        return True
+    else:
+        return downLoadFromWeb(url)
 
 
 # =====================
@@ -288,3 +298,15 @@ async def send_cards_byCard(js, func):
             MessageSegment("image", {
                 "file": f"base64://{str(image_to_base64(text_to_image2(result, page_text)), encoding='utf-8')}"
             })]))
+
+
+def downLoadFromWeb(url: Path) -> bool:
+    picName = url.name
+    url = baige_url + picName
+    if useWebPic:
+        r = httpx.get(url)
+        if r.status_code == httpx.codes.ok:
+            with open(static_url / picName, 'wb') as f:
+                f.write(r.content)
+            return True
+    return False
