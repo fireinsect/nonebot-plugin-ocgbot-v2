@@ -1,19 +1,10 @@
-from nonebot import get_driver
-from pydantic import BaseModel, Extra
+from nonebot import get_plugin_config
+from pydantic import BaseModel
 
 
-class Config:
-    def __init__(self):
-        driver_config = get_driver().config
-        try:
-            self.static_path = driver_config.static_path
-        except:
-            self.static_path = ""
-
-        try:
-            self.use_web_pic = driver_config.use_web_pic
-        except:
-            self.use_web_pic = False
+class Config(BaseModel):
+    static_path: str = ""
+    use_web_pic: bool = False
 
 
-config = Config()
+config = get_plugin_config(Config)
