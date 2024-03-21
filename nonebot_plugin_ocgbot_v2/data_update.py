@@ -8,6 +8,7 @@ from nonebot_plugin_ocgbot_v2.libraries.staticvar import forbidden
 forbidden_update = on_command('更新禁卡表', permission=SUPERUSER)
 test = on_command('test')
 
+
 @forbidden_update.handle()
 async def update(event: Event):
     forbidden.clear()
