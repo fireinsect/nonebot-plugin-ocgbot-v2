@@ -4,6 +4,8 @@ import math
 import random
 import sys
 from pathlib import Path
+
+import nonebot
 from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 
