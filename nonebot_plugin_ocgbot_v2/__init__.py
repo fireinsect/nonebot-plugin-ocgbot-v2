@@ -1,6 +1,5 @@
 import asyncio
 import json
-import os.path
 from pathlib import Path
 from threading import Thread
 import httpx
@@ -110,7 +109,7 @@ async def nickNameInit():
         with open(nick_path, 'r', encoding='utf-8') as f:
             nick_json = json.loads(f.read())
             if isinstance(nick_json, dict):
-                nick_json=nick_json['RECORDS']
+                nick_json = nick_json['RECORDS']
             logger.info(f'nickname.json 读取成功')
             for js in nick_json:
                 if js['NK_type'] == 0:
