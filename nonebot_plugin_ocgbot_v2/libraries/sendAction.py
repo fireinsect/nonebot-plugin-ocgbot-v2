@@ -1,8 +1,10 @@
+import asyncio
 import random
 import re
 import httpx
 from nonebot.adapters.onebot.v11 import Message, MessageSegment
 
+from .tool import download
 from ..config import config
 from nonebot_plugin_ocgbot_v2.libraries.Card import CardResult
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import noSearchText, lanName, pics_path
@@ -261,7 +263,7 @@ def img_exist(url):
     if url.exists():
         return True
     else:
-        return downLoadFromWeb(url)
+        return asyncio.run(downLoadFromWeb(url))
 
 
 # =====================
@@ -300,13 +302,14 @@ async def send_cards_byCard(js, func):
             })]))
 
 
-def downLoadFromWeb(url: Path) -> bool:
+async def downLoadFromWeb(url: Path) -> bool:
     picName = url.name
-    url = baige_url + picName
     if useWebPic:
-        r = httpx.get(url)
-        if r.status_code == httpx.codes.ok:
-            with open(static_url / picName, 'wb') as f:
-                f.write(r.content)
-            return True
+        await download(baige_url, static_url, picName)
+        # client = httpx.AsyncClient
+        # r = await client.get(url)
+        # if r.status_code == httpx.codes.ok:
+        #     with open(static_url / picName, 'wb') as f:
+        #         f.write(r.content)
+        return True
     return False

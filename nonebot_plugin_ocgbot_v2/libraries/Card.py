@@ -17,6 +17,9 @@ conn, cursor = sqlite.connect(Path(cdb_path) / "cards.cdb")
 if (Path(cdb_path) / "pre-release.cdb").exists():
     conn_pre, cursor_pre = sqlite.connect(Path(cdb_path) / "pre-release.cdb")
     pre_flag = 1
+elif(Path(cdb_path) / "test-release.cdb").exists():
+    conn_pre, cursor_pre = sqlite.connect(Path(cdb_path) / "test-release.cdb")
+    pre_flag = 1
 
 if (Path(cdb_path) / "extra_card.cdb").exists():
     conn_extra, cursor_extra = sqlite.connect(Path(cdb_path) / "extra_card.cdb")

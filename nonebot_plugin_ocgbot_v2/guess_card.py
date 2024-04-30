@@ -13,6 +13,7 @@ from nonebot_plugin_ocgbot_v2.libraries.Card import getRandomCard, getCard
 from nonebot_plugin_ocgbot_v2.libraries.Guess import Guess
 from nonebot_plugin_ocgbot_v2.libraries.charpic import charPic
 from nonebot_plugin_ocgbot_v2.libraries.globalMessage import *
+from nonebot_plugin_ocgbot_v2.libraries.sendAction import downLoadFromWeb
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # 将父级目录加入执行目录列表
 from nonebot_plugin_ocgbot_v2.libraries.image import *
@@ -23,6 +24,9 @@ from nonebot.adapters.onebot.v11 import Bot, Event, GroupMessageEvent, MessageSe
     Message, GROUP_ADMIN, GROUP_OWNER
 from nonebot.typing import T_State
 from nonebot_plugin_ocgbot_v2.libraries.guessManage import guessCardManager
+
+useWebPic: bool = config.use_web_pic
+
 
 # test = '{"status":200,"msg":"获取成功","data":{"cards":[{"id":9107,"cardId":75109441,"name":"半蛇人 萨库兹","effect":"这张卡1个回合可以有1次变回里侧守备表示。这张卡反转时，对方场上的盖伏的全部魔法·陷阱卡翻开，确认后变回原来的盖伏形式。","zz":"爬虫类族","mainType":"怪兽","type":"怪兽 效果","level":"3 星","attribute":"地","atk":"800","def":"1400","jpName":"半蛇人サクズィー","enName":"Cobraman Sakuzy","forbidden":"-"}],"pageNum":1,"amount":1,"nowNum":1},"isSuccess":true}'
 # test2=json.loads(test)
@@ -193,11 +197,15 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
         await guessCard.finish(str(e))
     js = getRandomCard()
     card = js.cards[0]
-    pics_url = cardUrl + str(card.cardId) + ".jpg"
+    pics_url = Path(cardUrl) / (str(card.cardId) + ".jpg")
     try:
         image = Image.open(pics_url)
     except Exception as e:
-        await guessCard.send("没找到对应图片~")
+        if useWebPic:
+            await downLoadFromWeb(pics_url)
+            image = Image.open(pics_url)
+        else:
+            await guessCard.finish("对应图片不存在，无法进行猜卡~")
     re_image = image
     if "灵摆" in card.type:
         image = image.crop((30, 110, 370, 357))
@@ -207,13 +215,13 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
     gm.UpdateLastSend(sessionId)
     await guessCard.send([
         MessageSegment.at(user_id=event.sender.user_id),
-        MessageSegment.text(text=get_named() + "臭欧尼酱，你有三次机会哟~(输入跳过结束游戏)"),
+        MessageSegment.text(text=get_named()+"，你有三次机会哟~"+str(TIMEOUT)+"秒后公布答案！(输入跳过结束游戏)"),
         MessageSegment.image(f"base64://{str(image_to_base64(image), encoding='utf-8')}")
     ])
     await guess.start(uid, card, image_to_base64(re_image))
     await asyncio.sleep(TIMEOUT)
-    if uid in guess.User and not guess.User[uid].end and guess.User[uid].card.cardId==card.cardId:
-        message=[
+    if uid in guess.User and not guess.User[uid].end and guess.User[uid].card.cardId == card.cardId:
+        message = [
             MessageSegment.text(text=guess_timeout().format(card.name)),
             MessageSegment.image(f"base64://{guess.User[uid].image}")
         ]
@@ -226,7 +234,7 @@ async def _(event: GroupMessageEvent):
     groupSession = 'group_' + str(event.group_id)
     sessionId = 'user_' + str(event.sender.user_id)
     uid = groupSession + sessionId
-    name = event.get_message().strip()
+    name = str(event.get_message()).strip()
     card = guess.User[uid].card
     image = guess.User[uid].image
     time = guess.User[uid].time

@@ -4,12 +4,22 @@ from nonebot import logger
 
 from ..config import config
 
+# 猜卡难度
+guess_diff = [
+    {
+        'resize': 7,  # 模糊缩放比例
+        'cutsize': 6,  # 裁剪比例
+        'time': 3,  # 猜卡次数
+        'timeout': 30  # 答案公布时间
+    }
+]
+# 查询失败语录
 noSearchText = [
     "没找到捏~ 欧尼酱~",
     "咦？这张卡不存在呢",
     "哔哔~卡片不存在"
 ]
-
+# 合并消息显示昵称
 lanName = [
     "今天有没有好好打牌呢？",
     "适度打牌，注意休息",
@@ -23,9 +33,10 @@ lanName = [
     "今天堆点什么捏?",
     "嘟嘟嘟，小蓝警长"
 ]
-
+# 文本选择 当前0：雌小鬼语录 1：正常语录
 mess_type_choose = 1
 
+# 消息发送文本信息 ##表示称呼替代
 message_type = [
     {
         'guess': {
@@ -205,8 +216,7 @@ def guess_win() -> str:
     return "\r\n" + choice(arr).replace("##", get_named())
 
 
-#
-
+# 称呼信息
 def get_named() -> str:
     arr = [
         [
@@ -230,15 +240,6 @@ def get_named() -> str:
     return choice(arr[mess_type_choose])
 
 
-# 猜卡难度
-guess_diff = [
-    {
-        'resize': 7,
-        'cutsize': 6,
-        'time': 3,
-        'timeout': 100
-    }
-]
 static_path_abso = Path(__file__).parent.parent / "static"
 paths = {}
 json_path = str(static_path_abso / "json")
