@@ -73,7 +73,7 @@ async def send(js, bot, event, func, num=0):
             num = num - 1
             pics_url = static_url / (str(
                 js.cards[num].cardId) + '.jpg')
-            if img_exist(pics_url):
+            if await img_exist(pics_url):
                 messageListAppend(js, pics_url, num, msg_list)
             else:
                 jsex = CardResult()
@@ -82,7 +82,7 @@ async def send(js, bot, event, func, num=0):
                 jsex.nowNum = js.nowNum
                 jsex.cards = [js.cards[num]]
                 await messageListCreate(jsex, msg_list)
-        elif js.amount == 1 and img_exist(pics_url):
+        elif js.amount == 1 and await img_exist(pics_url):
             messageListAppend(js, pics_url, num, msg_list)
         else:
             messageListCreate(js, msg_list)
@@ -113,7 +113,7 @@ async def send2(js, func, num=0):
         num = num - 1
         pics_url = static_url / (str(
             js.cards[num].cardId) + '.jpg')
-        if img_exist(pics_url):
+        if await img_exist(pics_url):
             await func.finish(getAllMessage(js, pics_url, num))
         else:
             jsex = CardResult()
@@ -122,7 +122,7 @@ async def send2(js, func, num=0):
             jsex.nowNum = js.nowNum
             jsex.cards = [js.cards[num]]
             await send_cards_byCard(jsex, func)
-    elif js.amount == 1 and img_exist(pics_url):
+    elif js.amount == 1 and await img_exist(pics_url):
         await func.finish(getAllMessage(js, pics_url, num))
     else:
         await send_cards_byCard(js, func)
@@ -165,7 +165,7 @@ def messageListAppend(js, url, num, msg_list):
             {
                 # "file": f"base64://{str(image_to_base64(Image.open('src/static/pics/' + str(js['data'][
                 # 'cards'][0]['cardId']) + '.jpg')), encoding='utf-8')}"
-                "file": f"base64://{str(image_to_base64(img.resize((int(img.size[0] * PANTOGRAPH), int(img.size[1] * PANTOGRAPH)), Image.ANTIALIAS)), encoding='utf-8')}"}
+                "file": f"base64://{str(image_to_base64(img.resize((int(img.size[0] * PANTOGRAPH), int(img.size[1] * PANTOGRAPH)), Image.LANCZOS)), encoding='utf-8')}"}
         )
     ]))
     msg_list.append(Message([
@@ -223,7 +223,7 @@ def getAllMessage(js, url, num):
             {
                 # "file": f"base64://{str(image_to_base64(Image.open('src/static/pics/' + str(js['data'][
                 # 'cards'][0]['cardId']) + '.jpg')), encoding='utf-8')}"
-                "file": f"base64://{str(image_to_base64(img.resize((int(img.size[0] * PANTOGRAPH), int(img.size[1] * PANTOGRAPH)), Image.ANTIALIAS)), encoding='utf-8')}"
+                "file": f"base64://{str(image_to_base64(img.resize((int(img.size[0] * PANTOGRAPH), int(img.size[1] * PANTOGRAPH)), Image.LANCZOS)), encoding='utf-8')}"
             }
         ),
         MessageSegment(
@@ -259,11 +259,12 @@ def getPicOnlyMessage(js, num, url):
 
 # =========判断============
 # 判断图片是否存在
-def img_exist(url):
+async def img_exist(url):
+    print(url)
     if url.exists():
         return True
     else:
-        return asyncio.run(downLoadFromWeb(url))
+        return await downLoadFromWeb(url)
 
 
 # =====================

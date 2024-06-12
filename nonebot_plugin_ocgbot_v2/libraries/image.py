@@ -30,7 +30,7 @@ def text_to_image(text):
     text_list = text.split('\n')
     max_width = 0
     for text in text_list:
-        w, h = font.getsize(text)
+        w, h = getsize(font, text)
         max_width = max(max_width, w)
     wa = max_width + padding * 2
     ha = h * len(text_list) + margin * (len(text_list) - 1) + padding * 2
@@ -48,16 +48,16 @@ def text_to_image2(text, page_text):
     padding = 30
     margin = 33
     text_list = text.split('\n')
-    max_width = font.getsize(page_text)[0]
+    max_width = font.getbbox(page_text)[0]
     for text in text_list:
-        w, h = font.getsize(text)
+        w, h = getsize(font, text)
         max_width = max(max_width, w)
     wa = max_width + padding * 2 + 100
     ha = h * len(text_list) + h + margin * (len(text_list)) + padding * 2
     # i = Image.new('RGB', (wa, ha), color=(255, 255, 255))
     i = background
     change = max(ha / i.height, wa / i.width)
-    i = i.resize((int(i.width * change), int(i.height * change)), Image.ANTIALIAS)
+    i = i.resize((int(i.width * change), int(i.height * change)), Image.LANCZOS)
     i = i.crop(
         (int(i.width / 2 - wa / 2), int(i.height / 2 - ha / 2), int(i.width / 2 + wa / 2), int(i.height / 2 + ha / 2)))
     draw = ImageDraw.Draw(i)
@@ -76,17 +76,17 @@ def text_to_image_with_back(text, page_text, title):
     margin = 33
     text_list = text.split('\n')
     max_width = 0
-    title_w, title_h = font_title.getsize(title)
+    title_w, title_h = getsize(font_title, title)
     for text in text_list:
-        w, h = font.getsize(text)
+        w, h = getsize(font, text)
         max_width = max(max_width, w)
-    max_width = max(max_width, font.getsize(page_text)[0])
+    max_width = max(max_width, font.getlength(page_text))
     max_width = max(max_width, title_w)
     wa = max_width + padding * 2 + 100
     ha = h * len(text_list) + h + margin * (len(text_list)) + padding * 2 + title_h + int(title_h * 0.8)
     i = background
     change = max(ha / i.height, wa / i.width)
-    i = i.resize((int(i.width * change), int(i.height * change)), Image.ANTIALIAS)
+    i = i.resize((int(i.width * change), int(i.height * change)), Image.LANCZOS)
     i = i.crop(
         (int(i.width / 2 - wa / 2), int(i.height / 2 - ha / 2), int(i.width / 2 + wa / 2), int(i.height / 2 + ha / 2)))
     draw = ImageDraw.Draw(i)
@@ -104,3 +104,8 @@ def image_to_base64(img, format='PNG'):
     byte_data = output_buffer.getvalue()
     base64_str = base64.b64encode(byte_data)
     return base64_str
+
+
+def getsize(font, text):
+    left, top, right, bottom = font.getbbox(text)
+    return right - left, bottom - top
