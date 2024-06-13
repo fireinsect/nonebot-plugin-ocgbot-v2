@@ -372,7 +372,7 @@ def getGuessImg(image: Image, restrict=3) -> Image:
     height, weight = image.size
     # 模糊处理
     if getRandom(restrict) == 1:
-        image.thumbnail((height / RESIZE, weight / RESIZE), Image.ANTIALIAS)
+        image.thumbnail((height / RESIZE, weight / RESIZE), Image.LANCZOS)
         height, weight = image.size
         image = image.resize((height * RESIZE, weight * RESIZE))
     # 切割处理

@@ -15,11 +15,12 @@ def charPic(img: Image) -> Image:
         line = ""
         for x in range(img.width):
             gray = img.image.getpixel((x, y))
-            line += str_map[int(num * gray / 256)]
+            line += str_map[int(num * gray / 256)] if gray != 0 else " "
         lines.append(line)
     text = "\n".join(lines)
-    w, h = font.getsize_multiline(text)
-    text_img = Image.new("RGB", (w, h), "white")
+    text_img = Image.new("RGB", (2000, 2000), "white")
     draw = ImageDraw.Draw(text_img)
+    _, _, w, h = draw.multiline_textbbox((0, 0), text, font=font)
     draw.multiline_text((0, 0), text, font=font, fill="black")
+    text_img = text_img.crop((0, 0, w, h))
     return BuildImage(text_img).image
