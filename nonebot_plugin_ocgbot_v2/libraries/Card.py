@@ -245,21 +245,26 @@ def searchById(cid):
 def searchByName(name: str):
     org_name = copy.deepcopy(name)
     name = name.replace(" ", "")
-    name = nickNameMatch(name)
-    sql = "texts.name like '%{0}%'".format(name)
-    cards = selectFS(sql)
-    if extra_flag == 1:
-        sql_extra = "select * from datas where name like '%{0}%' GROUP BY name;"
-        cursor_extra.execute(sql_extra.format(name))
-        rows = cursor_extra.fetchall()
-        for row in rows:
-            card = Card_Extra(row)
-            cards.append(card)
-    if len(cards) == 0:
-        bg_temp = searchFromBG(org_name)
-        if bg_temp is not None:
-            cards = searchById(bg_temp)
-    cards.sort(key=sortCard)
+    names = nickNameMatch(name)
+    cards=[]
+    print(names)
+    for name in names:
+        sql = "texts.name like '%{0}%'".format(name)
+        cardsTemp = selectFS(sql)
+        if extra_flag == 1:
+            sql_extra = "select * from datas where name like '%{0}%' GROUP BY name;"
+            cursor_extra.execute(sql_extra.format(name))
+            rows = cursor_extra.fetchall()
+            for row in rows:
+                card = Card_Extra(row)
+                cardsTemp.append(card)
+        if len(cardsTemp) == 0:
+            bg_temp = searchFromBG(org_name)
+            if bg_temp is not None:
+                cardsTemp = searchById(bg_temp)
+        cardsTemp.sort(key=sortCard)
+        cards.extend(cardsTemp)
+
     return cards
 
 
@@ -295,15 +300,14 @@ def searchFromBG(name):
         return js['result'][0]['id']
 
 
-def nickNameMatch(name: str):
+def nickNameMatch(name: str) -> list:
     name = name.upper()
     toName = None
-    for nick in nick_name_0:
-        if name == nick['nick_name']:
-            return nick['name']
+    if name in nick_name_0:
+        return nick_name_0[name]
     for nick in nick_name_1:
         if nick['nick_name'] in name:
-            name.replace(nick['nick_name'], "▶")
+            name = name.replace(nick['nick_name'], "▶")
             toName = nick['name']
     namechar = []
     for i in range(len(name)):
@@ -311,7 +315,7 @@ def nickNameMatch(name: str):
     nameforsearch = "%".join(namechar)
     if toName is not None:
         nameforsearch = nameforsearch.replace("▶", toName)
-    return nameforsearch
+    return [nameforsearch]
 
 # a = SqliteUtils()
 # name="访问"

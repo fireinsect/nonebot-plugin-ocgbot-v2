@@ -46,7 +46,7 @@ cardUrl = pics_path
 guessCard = on_command('游戏王猜卡', aliases={'猜一张卡'}, expire_time=datetime.timedelta(1800))
 guessSolve = on_message(rule=is_now_guess)
 guessReset = on_command('猜卡重置')
-aiguessCard = on_command('ai猜卡')
+aiGuessCard = on_command('ai猜卡')
 gm = guessCardManager()
 RESIZE = guess_diff[0].get("resize")
 CUTSIZE = guess_diff[0].get("cutsize")
@@ -118,7 +118,7 @@ def verifySid(sid: str):
 #         gm.UpdateLastSend(sessionId)
 #         await aiGuessCard.send([
 #             MessageSegment.at(user_id=event.sender.user_id),
-#             MessageSegment.text(text=get_named()"，你有三次机会哟~(输入跳过结束游戏)"),
+#             MessageSegment.text(text=get_named()+"，你有三次机会哟~(输入跳过结束游戏)"),
 #             MessageSegment.image(f"base64://{str(image_to_base64(image), encoding='utf-8')}")
 #         ])
 #     except Exception as e:
@@ -126,7 +126,7 @@ def verifySid(sid: str):
 #         await aiGuessCard.finish("咿呀？启动失败了呢")
 #
 #
-# @aiguessCard.got("name")
+# @aiGuessCard.got("name")
 # async def test_(bot: Bot, event: GroupMessageEvent, state: T_State):
 #     name = str(state['name'])
 #     card = state['card']
@@ -174,7 +174,7 @@ def verifySid(sid: str):
 #                 MessageSegment.text(text="\r\n还有{0}次机会！".format(state['time']))
 #             ])
 #     else:
-#         await aiguessCard.finish([
+#         await aiGuessCard.finish([
 #             MessageSegment.at(user_id=event.sender.user_id),
 #             MessageSegment.text(text=guess_win().format(card.name)),
 #             MessageSegment.image(f"base64://{str(image_to_base64(state['image']), encoding='utf-8')}")

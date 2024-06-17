@@ -260,7 +260,6 @@ def getPicOnlyMessage(js, num, url):
 # =========判断============
 # 判断图片是否存在
 async def img_exist(url):
-    print(url)
     if url.exists():
         return True
     else:

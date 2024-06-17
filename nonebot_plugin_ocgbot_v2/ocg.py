@@ -129,7 +129,7 @@ async def _(bot: Bot, event: Event, state: T_State):
                     await send(js, bot, event, search_card)
                 else:
                     await send3(js, search_card)
-            await search_card.reject("")
+            await search_card.reject()
 
 
 randomCard = on_command('随机一卡', aliases={'抽一张卡'})

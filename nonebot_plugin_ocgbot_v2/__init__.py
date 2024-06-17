@@ -88,9 +88,12 @@ async def nickNameInit():
                 nick_json = nick_json['RECORDS']
             logger.info(f'nickname.json 读取成功')
             for js in nick_json:
-                if js['NK_type'] == 0:
-                    nick_name_0.append(js)
-                if js['NK_type'] == 1:
+                if js['nk_type'] == 0:
+                    if js['nick_name'] not in nick_name_0:
+                        nick_name_0[js['nick_name']] = [js['name']]
+                    else:
+                        nick_name_0[js['nick_name']].append(js['name'])
+                if js['nk_type'] == 1:
                     nick_name_1.append(js)
     except Exception as e:
         # 读取失败
