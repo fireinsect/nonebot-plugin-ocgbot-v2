@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-ocgbot-v2"
-version = "0.2.10.1"
+version = "0.2.10.2"
 description = "nonebot-plugin-ocgbot-v2"
 authors = ["fireinsect <847954981@qq.com>"]
 readme = "README.md"
@@ -16,8 +16,6 @@ Pillow = ">=9.5.0"
 httpx = ">=0.20.0,<1.0.0"
 numpy = ">=1.23.0"
 matplotlib = ">=3.7.1"
-pil_utils = ">=0.1.7"
-nonebot-plugin-localstore = "^0.4.0"
 
 [tool.nonebot]
 adapters = [
