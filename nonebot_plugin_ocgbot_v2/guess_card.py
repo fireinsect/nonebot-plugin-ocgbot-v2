@@ -207,10 +207,13 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
         else:
             await guessCard.finish("对应图片不存在，无法进行猜卡~")
     re_image = image
+    h, w = image.size
     if "灵摆" in card.type:
-        image = image.crop((30, 110, 370, 357))
+        image = image.crop((h * 0.08, w * 0.2, h * 0.9, w * 0.6))
+        #image = image.crop((30, 110, 370, 357))
     else:
-        image = image.crop((52, 110, 348, 407))
+        image = image.crop((h * 0.13, w * 0.19, h * 0.87, w * 0.7))
+        #image = image.crop((52, 110, 348, 407))
     image = getGuessImg(image)
     gm.UpdateLastSend(sessionId)
     await guessCard.send([

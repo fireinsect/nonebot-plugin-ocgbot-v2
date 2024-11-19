@@ -123,7 +123,6 @@ _✨ 提供游戏王相关服务 ✨_
 | 今日卡运 | 群员 | 否 | 群聊/私聊 | 查询今日运势 |
 | 随机一卡(抽一张卡) | 群员 | 否 | 群聊/私聊 | 随机一卡 |
 | 猜一张卡 | 群员 | 否 | 群聊 | 随机猜一张卡 |
-| 价格查询 卡名 (页码) | 群员 | 否 | 群聊/私聊 | 从集换社中查询卡牌价格 |
 | 查询饼图 | 群员 | 否 | 群聊/私聊 | 从萌卡中查询卡组使用饼图 |
 | 抽卡(猜卡)功能 on/off | 管理/群主/超管 | 否 | 群聊 | 开/关抽卡功能 |
 | 抽卡(猜卡)cd (数字) | 管理/群主/超管 | 否 | 群聊 | 设置抽卡cd |
@@ -161,10 +160,6 @@ _✨ 提供游戏王相关服务 ✨_
 <details>
     <summary><b>随机猜卡</b></summary>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/caik.png">
-</details>
-<details>
-    <summary><b>查询卡价</b></summary>
-    <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/jg.png">
 </details>
 <details>
     <summary><b>帮助菜单</b></summary>
