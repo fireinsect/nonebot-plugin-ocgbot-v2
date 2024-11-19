@@ -12,7 +12,7 @@ from nonebot_plugin_ocgbot_v2.libraries.image import *
 
 static_url = Path(pics_path)
 # 缩放比例
-PANTOGRAPH = 0.6
+PANTOGRAPH = 1
 
 baige_url = 'https://cdn.233.momobako.com/ygopro/pics/'
 
