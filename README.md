@@ -162,7 +162,7 @@ _✨ 提供游戏王相关服务 ✨_
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/caik.png">
 </details>
 <details>
-    <summary><b>帮助菜单</b></summary>
+    <summary><b>查询ygo饼图</b></summary>
     <img src="https://raw.githubusercontent.com/fireinsect/imageSave/master/bot_img/bt.png"> 
 </details>
 <details>
