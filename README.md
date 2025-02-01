@@ -179,6 +179,13 @@ _✨ 提供游戏王相关服务 ✨_
 </details>
 
 ## 💰 赞助
-感谢大家的赞助！你们的赞助将是我继续创作的动力！
+
+#### 请小虫买包卡？
+<details open>
+<summary>点击展开收款码</summary>
+<img style="width: 48%" src="http://ocgcard.daily.fireinsect.top/zfb.jpg">
+<img style="width: 50%" src="http://ocgcard.daily.fireinsect.top/wx.jpg">
+</details>
+
 #### 火属性小虫
 - [爱发电](https://afdian.com/a/ocg-bot)
