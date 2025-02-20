@@ -373,13 +373,14 @@ def isGuessWin(js, cardName, name) -> bool:
 # -----获取猜卡卡图 -----
 def getGuessImg(image: Image, restrict=3) -> Image:
     height, weight = image.size
+    re_num = getRandom(restrict)
     # 模糊处理
-    if getRandom(restrict) == 1:
+    if re_num == 1:
         image.thumbnail((height / RESIZE, weight / RESIZE), Image.LANCZOS)
         height, weight = image.size
         image = image.resize((height * RESIZE, weight * RESIZE))
     # 切割处理
-    elif getRandom(restrict) == 2:
+    elif re_num == 2:
         sqrt = math.sqrt(CUTSIZE)
         beSqrt = CUTSIZE / sqrt
         cut = (sqrt, beSqrt) if getRandom(2) == 1 else (beSqrt, sqrt)
