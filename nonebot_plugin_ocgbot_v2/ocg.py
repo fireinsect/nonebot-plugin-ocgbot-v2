@@ -58,12 +58,12 @@ async def _(bot: Bot, event: Event, state: T_State, args: Message = CommandArg()
     js = getCard(state['name'], state['page'])
     # except Exception as e:
     #     await search_card.finish("咿呀？查询失败了呢")
+    if js.amount == 0:
+        await sendNosearch(search_card)
     if int(search_group[1]) > int(js.pageNum):
         await search_card.finish("页码超出最大值" + "`" + str(js.pageNum) + "`")
     state['js'] = js
-    if js.amount == 0:
-        await sendNosearch(search_card)
-    elif isinstance(event, PrivateMessageEvent):
+    if isinstance(event, PrivateMessageEvent):
         await send2(js, search_card)
     elif isinstance(event, GroupMessageEvent):
         typee = sm.CheckType(sessionId)
