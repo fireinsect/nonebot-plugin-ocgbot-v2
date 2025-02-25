@@ -35,7 +35,7 @@ search_card = on_command("查卡", aliases={"ck", "CK"})
 
 
 @search_card.handle()
-async def _(bot: Bot, event: Event, state: T_State, args: Message = CommandArg()):
+async def _searchCardHandler(bot: Bot, event: Event, state: T_State, args: Message = CommandArg()):
     if isinstance(event, PrivateMessageEvent):
         sessionId = 'user_' + str(event.user_id)
     if isinstance(event, GroupMessageEvent):
@@ -113,6 +113,9 @@ async def _(bot: Bot, event: Event, state: T_State):
                 state['page'] = page
                 flag = 1
         else:
+            isCommand = await search_card.rule(bot,event,state)    # 收到新的查卡命令
+            if isCommand:
+                await _searchCardHandler(bot,event,state,CommandArg().dependency(state))    # 转回查卡处理函数
             await search_card.finish()
         if flag is not None:
             js = getCard(name, str(page))
