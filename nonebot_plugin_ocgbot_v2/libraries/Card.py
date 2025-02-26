@@ -115,12 +115,13 @@ class Card(Dict):
                 return getAttribute(str(hex(self['attribute'])))
 
             if item == "level":
+                level = self['level']&0xffff
                 if "连接" in types:
-                    return "Link " + str(self['level'])
+                    return "Link " + str(level)
                 elif "超量" in types:
-                    return str(self['level']) + " 阶"
+                    return str(level) + " 阶"
                 else:
-                    return str(self['level']) + " 星"
+                    return str(level) + " 星"
             if item == "effect":
                 return self['desc'].replace("\r", "")
             return self[item]
