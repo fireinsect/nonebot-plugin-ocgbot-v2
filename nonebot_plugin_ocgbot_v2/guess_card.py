@@ -356,9 +356,9 @@ async def _(event: GroupMessageEvent):
 #         ])
 
 
-# 猜卡结果判断
+# 猜卡结果判断（False--猜对 True--猜错）
 def isGuessWin(js, cardName, name) -> bool:
-    if name is cardName:
+    if name in cardName and len(name) >= len(cardName) / 3:
         return False
     if js.amount <= 5:
         for card in js.cards:
