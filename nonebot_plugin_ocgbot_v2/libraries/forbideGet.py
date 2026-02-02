@@ -9,8 +9,8 @@ from nonebot_plugin_ocgbot_v2.libraries.staticvar import forbidden
 url = "https://www.db.yugioh-card.com/yugiohdb/forbidden_limited.action?request_locale=ja#list_forbidden"
 session = HTMLSession()
 bans_url = "#list_forbidden > div.list > div>div"
-rests_url = "#list_limited > #forbidden_limited_list > div>div"
-pres_url = "#list_semi_limited > #forbidden_limited_list > div>div"
+rests_url = "#list_limited > div.list > div>div"
+pres_url = "#list_semi_limited > div.list > div>div"
 
 # 禁止卡cid
 bans = []
