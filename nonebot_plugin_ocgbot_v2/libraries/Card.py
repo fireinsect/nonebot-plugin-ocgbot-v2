@@ -131,6 +131,7 @@ class Card(Dict):
 
 class CardResult(Dict):
     cards: Optional[list] = None
+    all_cards: Optional[list] = None
     pageNum: Optional[int] = None
     amount: Optional[int] = None
     nowNum: Optional[int] = None
@@ -192,6 +193,7 @@ def getCardResult(cards, page):
     cardResult = CardResult()
     cards = forbiddenChange(cards)
     cardResult.amount = len(cards)
+    cardResult.all_cards = cards
     cardResult.pageNum = int(math.ceil(len(cards) / pagesize))
     if cards is not None:
         cardResult.nowNum = page

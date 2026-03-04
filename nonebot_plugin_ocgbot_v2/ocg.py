@@ -5,7 +5,7 @@ from nonebot.typing import T_State
 from nonebot.adapters.onebot.v11 import Event, Bot, GroupMessageEvent, PrivateMessageEvent, GROUP_ADMIN, \
     GROUP_OWNER
 from nonebot import on_command
-from nonebot_plugin_ocgbot_v2.libraries.Card import getCard, getRandomCard
+from nonebot_plugin_ocgbot_v2.libraries.Card import getCard, getRandomCard, getCardResult
 from nonebot_plugin_ocgbot_v2.libraries.searchManage import SearchManager
 from nonebot_plugin_ocgbot_v2.libraries.sendAction import *
 from nonebot_plugin_ocgbot_v2.libraries.randomManage import RandomManager
@@ -120,7 +120,7 @@ async def _(bot: Bot, event: Event, state: T_State):
             else:
                 await search_card.finish()
         if flag is not None:
-            js = getCard(name, str(page))
+            js = getCardResult(js.all_cards, page)
             state['js'] = js
             if js.amount == 0:
                 await sendNosearch(search_card)
